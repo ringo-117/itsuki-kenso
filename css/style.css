@@ -49,6 +49,7 @@ body {
     align-content: center; */
     display: grid;
     place-content: center;
+    padding-right: 2px;
   }
 
   .header .logo-box img  {
@@ -141,15 +142,6 @@ body {
     /* margin-top: 30vh; */
   }
 
-  .header-logo {
-    font-size: 20px;
-    text-align: left;
-  }
-
-  .header-logo {
-    font-family: Georgia;
-  }
-
   .nav-item{
     font-family: "Noto Sans JP";
     color: #fff;
@@ -166,14 +158,12 @@ body {
     opacity: 0;
   }
 
-
   .container .logo-box {
-    justify-items: left;
     margin-bottom: 40px;
+    text-align: left;
   }
   .container .logo-box img  {
     width: 63px;
-    /* margin: 0 auto; */
   }
 
   .container .logo-box .logo  {
@@ -184,6 +174,7 @@ body {
     margin-top: 10px;
     font-size: 16px;
     margin-left: 3px;
+    text-align: left;
   }
 
   /*==============================================================
@@ -203,8 +194,6 @@ body {
     opacity: 0;
     transition: all 0.5s ease;
     background-color: #D0C4A2;
-
-    
   }
 
   .line-box.show {
@@ -224,11 +213,10 @@ body {
     display: inline-block;
     /* align-content: center; */
     /* padding-bottom: 33px; */
-    padding-bottom: 20px;
-
+    padding-bottom: 23px;
     display: grid;
     place-content: center;
-    gap: 8px;
+    gap: 10px;
   }
 
   .line-box img {
@@ -329,6 +317,11 @@ body {
     font-weight: 400;
     font-size: 12px;
     letter-spacing: 0.1em;
+    align-items: center;
+  }
+
+  .footer-link p {
+    margin-bottom: -6px;
   }
 
   .footer-link .sns img {
