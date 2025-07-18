@@ -1,0 +1,336 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+  /* font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", HelveticaNeue, YuGothic, "Yu Gothic Medium", "Yu Gothic", Verdana, Meiryo, sans-serif; */
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  /* font-weight: weight; */
+  font-style: normal;
+
+  font-feature-settings: 'palt' 1;
+  letter-spacing: 0.05em;
+  color: #333;
+  background-color: #EDECE6;
+}
+
+@media screen and (min-width: 320px) {
+  /* スマホ用レイアウト 320px以上の範囲に収めるデザインはこの中に記述 */
+
+  /*==============================================================
+    　　ヘッダー
+  ==============================================================*/
+  .header {
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    z-index: 99;
+  }
+
+  .header .logo-box  {
+    width: 100px;
+    height: 120px;
+    background-color: #289A49;
+  }
+
+  .header .logo-box.active {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .header .logo-box a  {
+    width: 100px;
+    height: 120px;
+    display: inline-block;
+    justify-items: center;
+    align-content: center;
+  }
+
+  .header .logo-box img  {
+    width: 55px;
+    margin: 0 auto;
+  }
+
+  .header .logo-box .logo  {
+    font-family: "Noto Sans JP";
+    font-weight: 500;
+    text-align: center;
+    color: #fff;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+  .header .btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    justify-content: center;
+    position: fixed;
+    top: 20px;
+    right: 5%;
+  }
+
+  .btn i{
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 2px;
+    width: 20px;
+    border-radius: 3px;
+    background-color: #289A49;
+    transition: 0.5s;
+  }
+
+  .btn.color i{
+    background-color: #525A5F;
+  }
+
+  .btn i:nth-of-type(1){
+    top: 20px;
+  }
+
+  .btn i:nth-of-type(2){
+    top: 28px;
+  }
+
+  .btn.active i:nth-of-type(1){
+    transform: translateY(4px) rotate(45deg);
+  }
+
+  .btn.active i:nth-of-type(2){
+    transform: translateY(-4px) rotate(-45deg);
+  }
+
+  .btn.active i {
+    left: 15.5px;
+  }
+
+  /* メニューのデザイン*/
+  .container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 15;
+    background: #289A49;
+    transition: .5s;
+    opacity: 0;
+    text-align: center;
+    overflow: hidden;
+    overflow-y: scroll;
+    pointer-events: none;
+    padding: 115px 0 0 75px;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .container.active{
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* メニュー黒ポチを消す */
+  .nav-list {
+    list-style: none;
+    /* margin-top: 30vh; */
+  }
+
+  .header-logo {
+    font-size: 20px;
+    text-align: left;
+  }
+
+  .header-logo {
+    font-family: Georgia;
+  }
+
+  .nav-item{
+    font-family: "Noto Sans JP";
+    color: #fff;
+    text-align: left;
+    font-size: 24px;
+    font-weight: 700;
+    font-style: normal;
+    margin-bottom: 30px;
+    justify-content: center;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-item.active .container{
+    opacity: 0;
+  }
+
+
+  .container .logo-box {
+    justify-items: left;
+    margin-bottom: 40px;
+  }
+  .container .logo-box img  {
+    width: 63px;
+    /* margin: 0 auto; */
+  }
+
+  .container .logo-box .logo  {
+    font-family: "Noto Sans JP";
+    font-weight: 500;
+    text-align: center;
+    color: #fff;
+    margin-top: 10px;
+    font-size: 16px;
+    margin-left: 3px;
+  }
+
+  /*==============================================================
+    　　LINE
+  ==============================================================*/
+  .line-box {
+    position: fixed;
+    top: 50%;
+    left: auto;
+    right: 0;
+    transform: translate(100%, -50%);
+    width: 40px;
+    height: 190px;
+    color: #289A49;
+    font-weight: bold;
+    z-index: 16;
+    opacity: 0;
+    transition: all 0.5s ease;
+    background-color: #D0C4A2;
+  }
+
+  .line-box.show {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
+
+  .line-box a {
+    /* margin: 0;
+    padding: 0; */
+    width: 40px;
+    height: 190px;
+    justify-items: center;
+    /* border-radius: 13px 0 0 13px;
+    padding: 15px 0 16px 4px; */
+    white-space: nowrap;
+    display: inline-block;
+    align-content: center;
+    padding-bottom: 33px;
+  }
+
+  .line-box img {
+    width: 18px;
+    height: 18px;
+    margin-bottom: 20px;
+    margin-left: 3px;
+  }
+
+  .line-box p {
+    transform: rotate(90deg);
+    margin: 0 auto;
+    font-size: 16px;
+    letter-spacing: 0.2em;
+    /* padding: 8px 0; */
+  }
+
+  /*==============================================================
+    　　コピー
+  ==============================================================*/
+  .copy-box {
+    position: fixed;
+    left: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    font-size: 10px;
+    z-index: 10;
+    transform: rotate(-90deg);
+  }
+
+  .copy-box .copy {
+    font-family: "Josefin Sans";
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    font-weight: 700;
+  }
+
+  /*==============================================================
+    　　フッター
+  ==============================================================*/
+  .footer {
+   font-family: "Noto Sans JP";
+   background-color: #F6F6F2;
+  }
+
+  .footer .logo-box {
+    padding: 60px 37.5px 30px;
+    display: flex;
+    align-items: center;
+  }
+
+  .footer .logo-box img {
+    width: 63px;
+    margin-right: 20px;
+  }
+
+  .footer .logo-box .logo {
+    font-weight: 500;
+    font-size: 40px;
+    color: #575757;
+    margin-bottom: 4px;
+  }
+
+  .footer .info-box {
+    margin: 0 30px 0 37.5px;
+  }
+
+  .footer .info {
+    /* font-weight: 400px; */
+    font-size: 16px;
+  }
+
+  .footer .info .info-item {
+    display: grid;
+    grid-template-columns: 85px 1fr;
+    margin-bottom: 10px;
+    font-weight: 400;
+  }
+
+  .footer .info .info-item dt {
+    font-weight: 400;
+  }
+
+  .footer .text {
+    font-size: 12px;
+    line-height: 2.8;
+    margin: 38px 0 30px;
+    font-weight: 500;
+  }
+
+  .footer-link {
+    border-top: solid 1px #DFDFDF;
+    padding: 65px 37.5px;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Josefin Sans";
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+  }
+
+  .footer-link .sns img {
+    width: 18px;
+  }
+
+  .footer-link .sns img.line {
+    margin-right: 9px;
+  }
+
+
+
+}
