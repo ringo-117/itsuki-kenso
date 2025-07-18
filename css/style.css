@@ -45,13 +45,14 @@ body {
     width: 100px;
     height: 120px;
     display: inline-block;
-    justify-items: center;
-    align-content: center;
+    /* justify-items: center;
+    align-content: center; */
+    display: grid;
+    place-content: center;
   }
 
   .header .logo-box img  {
     width: 55px;
-    margin: 0 auto;
   }
 
   .header .logo-box .logo  {
@@ -202,6 +203,8 @@ body {
     opacity: 0;
     transition: all 0.5s ease;
     background-color: #D0C4A2;
+
+    
   }
 
   .line-box.show {
@@ -219,8 +222,13 @@ body {
     padding: 15px 0 16px 4px; */
     white-space: nowrap;
     display: inline-block;
-    align-content: center;
-    padding-bottom: 33px;
+    /* align-content: center; */
+    /* padding-bottom: 33px; */
+    padding-bottom: 20px;
+
+    display: grid;
+    place-content: center;
+    gap: 8px;
   }
 
   .line-box img {

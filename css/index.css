@@ -164,7 +164,7 @@
   }
 
   .service-item {
-    justify-items: center;
+    place-items: center;
   }
 
   .service-img {
