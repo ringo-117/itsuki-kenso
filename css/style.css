@@ -127,7 +127,8 @@ body {
     overflow: hidden;
     overflow-y: scroll;
     pointer-events: none;
-    padding: 115px 0 0 75px;
+    /* padding: 115px 0 0 75px; */
+    padding: 30% 0 0 16%;
     padding-bottom: env(safe-area-inset-bottom);
   }
 
@@ -205,6 +206,7 @@ body {
     /* margin: 0;
     padding: 0; */
     width: 40px;
+    max-width: 40px;
     height: 190px;
     justify-items: center;
     /* border-radius: 13px 0 0 13px;

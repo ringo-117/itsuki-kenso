@@ -164,7 +164,6 @@
   }
 
   .service-item {
-    place-items: center;
     text-align: center;
   }
 
@@ -173,6 +172,7 @@
     height: 114px;
     background-color: #fff;
     border-radius: 50%;
+    margin: 0 auto;
   }
 
   .service-item p {
