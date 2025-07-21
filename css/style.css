@@ -17,6 +17,10 @@ body {
 @media screen and (min-width: 320px) {
   /* スマホ用レイアウト 320px以上の範囲に収めるデザインはこの中に記述 */
 
+  .tb-nav {
+    display: none;
+  }
+
   /*==============================================================
     　　ヘッダー
   ==============================================================*/
@@ -244,7 +248,6 @@ body {
     left: -40px;
     top: 50%;
     transform: translateY(-50%);
-
     font-size: 10px;
     z-index: 10;
     transform: rotate(-90deg);
@@ -334,6 +337,159 @@ body {
     margin-right: 9px;
   }
 
+}
 
+
+@media screen and (min-width: 640px) {
+  /* タブレット用レイアウト 640px以上の範囲に収めるデザインはこの中に記述 */
+
+  .sp-nav {
+    display: none;
+  }
+
+  .tb-nav {
+    display: block;
+  }
+
+  /*==============================================================
+    　　TB_ヘッダー
+  ==============================================================*/
+  .header .logo-box  {
+    width: 200px;
+    height: 200px;
+    margin-left: 2.5%;
+  }
+
+  .header .logo-box a  {
+    width: 80px;
+    height: auto;
+    margin: 50px auto 0;
+  }
+
+  .header .logo-box img  {
+    /* width: 80px; */
+    width: 73px;
+  }
+
+  .header .logo-box .logo  {
+    margin-top: 16px;
+    /* font-size: 23px; */
+    font-size: 21px;
+  }
+
+  .nav-list {
+    height: 150px;
+    width: 82.4%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin-right: 20px;
+  }
+
+  .nav-item {
+    font-size: 14px;
+    margin: 0 12px;
+  }
+
+  .nav-item a.link-01{
+    padding-bottom: 7px;
+    border-bottom: solid 1px #fff;
+  }
+
+  .trigger-header {
+    height: 1px;
+    /* background: red; */
+  }
+
+
+  /* ヘッダーがスクロールされたときに追加されるクラス */
+  .header.scrolled {
+    height: 80px;
+    transition: all 0.3s ease;
+    background-color: #EDECE6;
+  }
+
+  .header.scrolled .logo-box {
+    width: 120px;
+    height: 120px;
+    transition: all 1s 0s cubic-bezier(0.23,1,0.32,1);
+    /* transition: all 0.3s ease; */
+  }
+
+  .header.scrolled .logo-box a  {
+    width: 60px;
+    margin: 22px auto 0;
+    transition: all 1s 0s cubic-bezier(0.23,1,0.32,1);
+  }
+
+  .header.scrolled .logo-box img {
+    width: 60px; /* ロゴ画像を小さく */
+  }
+
+  .header.scrolled .logo-box .logo {
+    font-size: 17px; /* 文字サイズも小さく */
+    margin-top: 9px;
+  }
+
+  .header.scrolled .nav-item a {
+    color: #333; /* スクロール後のリンク文字色 */
+  }
+
+  .header.scrolled .nav-list {
+    height: 80px; /* ナビゲーションバーの高さを少し縮める */
+    /* margin-right: 2px; */
+    padding-bottom: 8px;
+  }
+
+  .header.scrolled .nav-item a.link-01{
+    border-bottom: solid 1px #333;
+  }
+
+  /*==============================================================
+    　　TB_コピー
+  ==============================================================*/
+  .copy-box {
+    left: -27px;
+  }
+
+  /*==============================================================
+    　　TB_フッター
+  ==============================================================*/
+  .footer .logo-box {
+    padding: 80px 0 30px;
+    width: 83.3%;
+    margin: 0 auto;
+  }
+
+  .footer .info-box {
+    width: 83.3%;
+    margin: 0 auto;
+  }
+
+  .footer .info .info-item {
+    display: grid;
+    grid-template-columns: 85px 1fr;
+    margin-bottom: 10px;
+    font-weight: 400;
+  }
+
+  .footer .text {
+    margin: 43px 0 43px;
+    font-size: 12.5px;
+  }
+
+  .footer-link {
+    padding: 44px 0 100px;
+    width: 83.3%;
+    margin: 0 auto;
+  }
+
+
+
+}
+
+
+@media screen and (min-width: 1024px) {
+  /* パソコン用レイアウト 1024px以上の範囲に収めるデザインはこの中に記述 */
 
 }

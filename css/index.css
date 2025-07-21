@@ -23,7 +23,6 @@
     width: 100vw;
     height: 100vh;
     max-height: 100vh;
-
     overflow: hidden;
     background-color: #289A49;
     padding-left: 37.5px;
@@ -92,13 +91,13 @@
   }
 
   @keyframes rotate-circle {
-  from {
-    transform: rotate(0deg);
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
   /*==============================================================
     　　PICKUP
@@ -146,7 +145,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 16px;
+    border-radius: 20px;
   }
 
   /*==============================================================
@@ -255,7 +254,7 @@
     margin-bottom: 34px;
   }
 
- /*==============================================================
+  /*==============================================================
     　　STRENGTHS
   ==============================================================*/
   .sec-strengths {
@@ -321,7 +320,7 @@
 
   .sec-link .title {
     font-family: "Noto Sans JP";
-    font-weight: 500;
+    font-weight:400;
     font-size: 24px;
     text-align: center;
     position: absolute;
@@ -343,8 +342,9 @@
 
   .sec-link .sec-img {
     border-radius: 32px;
-    height: auto;
-    aspect-ratio: 3 / 2;
+    width: 100%;
+    height: 207px;
+    /* aspect-ratio: 3 / 2; */
   }
 
   .sec-link .sec-img img {
@@ -366,20 +366,174 @@
     object-fit: cover;
     object-position: 10% 50%;
   }
+}
+
+@media screen and (min-width: 640px) {
+  /* タブレット用レイアウト 640px以上の範囲に収めるデザインはこの中に記述 */
+  /*==============================================================
+    　　TB_ヒーロー
+  ==============================================================*/
+  .top-img {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    height: 68%;
+  }
+
+  .sec-top .info-box {
+    font-size: 14px;
+    font-weight: 600;
+    left: 7.6%;
+  }
+
+  .sec-top .info-box span {
+    font-weight: 500;
+  }
+
+  .sec-top .scroll {
+    right: 6.25%;
+    bottom: 8%;
+    width: 12%;
+    height: auto;
+  }
+
+  .sec-top .scroll .arrow {
+    margin-top: 0px;
+    margin-right: -15px;
+  }
+
+  .sec-top .scroll .arrow img {
+    width: 15px;
+  }
+
+  .sec-top .scroll .circle img {
+    width: 105px;
+    animation: rotate-circle 20s linear infinite;
+    display: inline-block;
+  }
+
+  /*==============================================================
+    　　TB_PICKUP
+  ==============================================================*/
+  .sec {
+    margin: 0 auto;
+    width: 83.3%;
+    margin-top: 100px;
+    display: block;
+  }
+
+  .sec-title .title {
+    font-size: 40px;
+    margin-top: 0;
+  }
+
+  .more {
+    font-size: 15px;
+  }
+
+  /* ==================== スライダー ================== */
+  .swiper-slide {
+    height: 255px;
+    width: 340px;
+  }
+
+  .swiper-slide img {
+    border-radius: 30px;
+  }
+
+  /*==============================================================
+    　　TB_SERVICE
+  ==============================================================*/
+  .service-img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .service-item {
+    position: relative;
+  }
+
+  .service-item-bg {
+    /* content: ""; */
+    position: absolute;
+    z-index: -1;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 65%;
+    /* margin: 0 auto; */
+    border-radius: 50%;
+    transition: .5s;
+    background-color: #289A49;
+  }
+
+  .service-item p {
+    font-size: 17px;
+    margin-top: 12px;
+  }
+
+  /*==============================================================
+    　　TB_ABOUT
+  ==============================================================*/
+  .sec-img {
+    height: 450px;
+  }
+
+  .sec-about .square {
+    height: 50px;
+  }
+
+  .sec-about .text {
+    width: auto;
+  }
+
+  /*==============================================================
+    　　TB_スタッフ紹介・よくある質問
+  ==============================================================*/
+  .sec-link-box {
+    /* display: flex; */
+    margin-bottom: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+  }
+
+  .sec-link {
+    margin: 0;
+  }
+
+  .sec-link.staff {
+    margin-bottom: 0;
+    /* margin-right: 30px; */
+  }
+
+  .sec-link.faq {
+    margin-bottom: 0;
+  }
+
+  .sec-link .title {
+    width: 88%;
+  }
+
+  .sec-link .sec-img {
+    width: 100%;
+    height: 200px;
+    /* aspect-ratio: 3 / 1.7; */
+  }
+
+  /*==============================================================
+    　　TB_画像
+  ==============================================================*/
+  .bottom-bg {
+    height: 410px;
+  }
+
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media screen and (min-width: 1024px) {
+  /* パソコン用レイアウト 1024px以上の範囲に収めるデザインはこの中に記述 */
 
 }

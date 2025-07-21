@@ -17,6 +17,11 @@ const swiper = new Swiper(".swiper", {
   //   prevEl: ".swiper-button-prev",
   // },
 
+   autoplay: {
+    delay: 3000,        // 3秒ごとにスライド
+    disableOnInteraction: false // ユーザーが操作しても自動再生を止めない
+  },
+
   // 画面幅によって設定を変える
   breakpoints: {
     // 0px以上（スマホなど）
@@ -26,8 +31,9 @@ const swiper = new Swiper(".swiper", {
     },
     // 640px以上（タブレットなど）
     640: {
-      slidesPerView: 1,
+      slidesPerView: 2,
       spaceBetween: 32,
+      centeredSlides: false // ← 見切れをなくす
     },
     // 1024px以上（PC）
     1024: {

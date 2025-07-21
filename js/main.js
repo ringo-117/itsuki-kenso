@@ -40,6 +40,9 @@
 // });
 
 
+// ===================================================
+// ヘッダー（ハンバーガー）
+// ===================================================
 {
   const btn = document.querySelector('.btn');
   if (btn) {
@@ -73,9 +76,33 @@
   }
 }
 
+// ===================================================
+// ヘッダースクロール（スタイル変化）
+// ===================================================
+document.addEventListener('DOMContentLoaded', function () {
+  const header = document.querySelector('.tb-nav .header');
+  const trigger = document.querySelector('.trigger-header');
+
+  const headerObserver = new IntersectionObserver(
+    function (entries) {
+      if (entries[0].isIntersecting) {
+        header.classList.remove('scrolled');
+      } else {
+        header.classList.add('scrolled');
+      }
+    },
+    { threshold: 0 }
+  );
+
+  if (trigger) {
+    headerObserver.observe(trigger);
+  }
+});
 
 
+// ===================================================
 // LINE
+// ===================================================
 const lineBox = document.getElementById('lineBox');
 const endTarget = document.querySelector('.end-target');
 
