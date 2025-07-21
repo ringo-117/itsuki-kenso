@@ -97,6 +97,19 @@ document.addEventListener('DOMContentLoaded', function () {
   if (trigger) {
     headerObserver.observe(trigger);
   }
+
+
+  // 初回強制チェック（レンダリング後に一度だけ）
+  setTimeout(() => {
+    const rect = trigger.getBoundingClientRect();
+    const isInView = rect.top < window.innerHeight && rect.bottom >= 0;
+
+    if (isInView) {
+      header.classList.remove('scrolled');
+    } else {
+      header.classList.add('scrolled');
+    }
+  }, 100); // 100msほど待つことでレイアウト確定を待つ
 });
 
 
