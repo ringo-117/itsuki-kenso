@@ -491,5 +491,92 @@ body {
 
 @media screen and (min-width: 1024px) {
   /* パソコン用レイアウト 1024px以上の範囲に収めるデザインはこの中に記述 */
+  /*==============================================================
+    　　PC_ヘッダー
+  ==============================================================*/
+  .header .logo-box  {
+    width: 240px;
+    height: 240px;
+    line-height: 1;
+    margin-left: 2.5%;
+  }
 
+  .header .logo-box a  {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 60px auto 0;
+  }
+
+   .header .logo-box img  {
+    width: 95px;
+  }
+
+  .header .logo-box .logo  {
+    margin-top: 18px;
+    font-size: 25px;
+  }
+
+  /* .header-sns {
+    display: flex;
+    margin-left: 100px;
+    display: inline-block;
+    display: grid;
+    grid-template-columns: 1fr auto;
+  } */
+
+  /* .header-sns {
+    min-width: 150px;
+    display: flex;
+  } */
+
+  .header-sns p {
+    font-size: 14px;
+    color: #fff;
+    font-weight: 700;
+    margin-top: 2.5px;
+  }
+
+  .header-sns .sns {
+    display: flex;
+    margin-left: 16px;
+  }
+
+  .header-sns .sns img {
+    width: 22px;
+  }
+
+  .header-sns .sns img.line {
+    margin-right: 16px;
+    width: 21.5px;
+  }
+
+  .header .header-sns .icon-white {
+    display: none;
+  }
+
+  .nav-list {
+    justify-content: left;
+    margin-left: 30px;
+  }
+
+
+  /* ヘッダーがスクロールされたときに追加されるクラス */
+  .header.scrolled .logo-box .logo {
+    font-size: 17px;
+    margin-top: 9px;
+    min-width: 60px;
+  }
+
+  .header.scrolled .header-sns p {
+    color: #333;
+  }
+
+  .header.scrolled .header-sns .icon-white {
+    display: block;
+  }
+
+  .header.scrolled .header-sns .icon-black {
+    display: none;
+  }
 }

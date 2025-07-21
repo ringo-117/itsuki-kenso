@@ -37,13 +37,15 @@ const swiper = new Swiper(".swiper", {
     },
     // 1024px以上（PC）
     1024: {
-      slidesPerView: 1.3,
+      slidesPerView: 2,
       spaceBetween: 30,
+      centeredSlides: false // ← 見切れをなくす
     },
     // 1450px以上（PC）
     1400: {
-      slidesPerView: 1.8,
+      slidesPerView: 2,
       spaceBetween: 30,
+      centeredSlides: false // ← 見切れをなくす
     }
   }
 });
