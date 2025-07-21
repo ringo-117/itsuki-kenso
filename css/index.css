@@ -450,12 +450,11 @@
     height: 140px;
   }
 
-  .service-item {
+  /* .service-item {
     position: relative;
   }
 
   .service-item-bg {
-    /* content: ""; */
     position: absolute;
     z-index: -1;
     top: 40%;
@@ -463,11 +462,10 @@
     transform: translate(-50%, -50%);
     width: 80%;
     height: 65%;
-    /* margin: 0 auto; */
     border-radius: 50%;
     transition: .5s;
     background-color: #289A49;
-  }
+  } */
 
   .service-item p {
     font-size: 17px;
