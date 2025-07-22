@@ -313,8 +313,13 @@ body {
     font-weight: 500;
   }
 
+  .foot-line {
+    width: 100vw;
+    height: 1px;
+    background-color: #DFDFDF;
+  }
+
   .footer-link {
-    border-top: solid 1px #DFDFDF;
     padding: 65px 37.5px;
     display: flex;
     justify-content: space-between;
