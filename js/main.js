@@ -79,39 +79,94 @@
 // ===================================================
 // ヘッダースクロール（スタイル変化）
 // ===================================================
-document.addEventListener('DOMContentLoaded', function () {
+// document.addEventListener('DOMContentLoaded', function () {
+  // const header = document.querySelector('.tb-nav .header');
+  // const trigger = document.querySelector('.trigger-header');
+
+//   const headerObserver = new IntersectionObserver(
+//     function (entries) {
+//       if (entries[0].isIntersecting) {
+//         header.classList.remove('scrolled');
+//       } else {
+//         header.classList.add('scrolled');
+//       }
+//     },
+//     { threshold: 0 }
+//   );
+
+//   if (trigger) {
+//     headerObserver.observe(trigger);
+//   }
+
+
+//   // 初回強制チェック（レンダリング後に一度だけ）
+//   setTimeout(() => {
+//     const rect = trigger.getBoundingClientRect();
+//     const isInView = rect.top < window.innerHeight && rect.bottom >= 0;
+
+//     if (isInView) {
+//       header.classList.remove('scrolled');
+//     } else {
+//       header.classList.add('scrolled');
+//     }
+//   }, 100); // 100msほど待つことでレイアウト確定を待つ
+// });
+
+
+
+
+
+
+// const hero = document.querySelector('.sec-top');
+// const options = { rootMargin: '-50px 0px 0px 0px' }; // ヒーロー終わりに微調整
+
+// const observer = new IntersectionObserver(entries => {
+//   if (entries[0].isIntersecting) {
+//     header.classList.add('scrolled');
+//   } else {
+//     header.classList.remove('scrolled');
+//   }
+// }, options);
+
+// observer.observe(hero);
+
+
+
+
+
+
+// ==============================
+// ヘッダースクロール（スタイル変化）
+// ==============================
+document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('.tb-nav .header');
-  const trigger = document.querySelector('.trigger-header');
+  const hero = document.querySelector('.sec-top');
+  if (!header || !hero) return;
 
-  const headerObserver = new IntersectionObserver(
-    function (entries) {
-      if (entries[0].isIntersecting) {
-        header.classList.remove('scrolled');
-      } else {
-        header.classList.add('scrolled');
-      }
-    },
-    { threshold: 0 }
-  );
-
-  if (trigger) {
-    headerObserver.observe(trigger);
-  }
-
-
-  // 初回強制チェック（レンダリング後に一度だけ）
-  setTimeout(() => {
-    const rect = trigger.getBoundingClientRect();
-    const isInView = rect.top < window.innerHeight && rect.bottom >= 0;
-
-    if (isInView) {
+  const headerObserver = new IntersectionObserver(entries => {
+    const entry = entries[0];
+    if (entry.isIntersecting) {
       header.classList.remove('scrolled');
     } else {
       header.classList.add('scrolled');
     }
-  }, 100); // 100msほど待つことでレイアウト確定を待つ
-});
+  }, {
+    rootMargin: '-50px 0px 0px 0px'
+  });
 
+  headerObserver.observe(hero);
+
+  // 📌 初期強制チェック
+  setTimeout(() => {
+    const rect = hero.getBoundingClientRect();
+    const isAbove = rect.bottom <= 50;
+    if (isAbove) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  }, 100);
+});
 
 // ===================================================
 // LINE
