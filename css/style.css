@@ -355,7 +355,7 @@ body {
     　　TB_ヘッダー
   ==============================================================*/
   .header .logo-box  {
-    width: 200px;
+    width: 180px;
     height: 200px;
     margin-left: 2.5%;
   }
@@ -383,8 +383,8 @@ body {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: right;
-    margin-right: 20px;
+    justify-content: center;
+    margin-right: 40px;
   }
 
   .header .list-box {
@@ -393,7 +393,7 @@ body {
 
   .nav-item {
     font-size: 14px;
-    margin: 0 12px;
+    margin: 0 10px;
   }
 
   .nav-item a.link-01{
@@ -444,6 +444,7 @@ body {
     height: 80px; /* ナビゲーションバーの高さを少し縮める */
     /* margin-right: 2px; */
     padding-bottom: 8px;
+    /* justify-content: end; */
   }
 
   .header.scrolled .nav-item a.link-01{
@@ -644,7 +645,7 @@ body {
 }
 
 @media screen and (min-width: 1180px) {
-  /* パソコン用レイアウト 1400px以上の範囲に収めるデザインはこの中に記述 */
+  /* タブレット横（ipad Air）用レイアウト 1400px以上の範囲に収めるデザインはこの中に記述 */
   /*==============================================================
     　　ヘッダー
   ==============================================================*/
