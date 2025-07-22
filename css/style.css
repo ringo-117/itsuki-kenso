@@ -525,16 +525,20 @@ body {
     grid-template-columns: 1fr auto;
   } */
 
-  /* .header-sns {
-    min-width: 150px;
+  .header-sns {
+    /* min-width: 300px; */
+    /* display: inline-block; */
+    height: 150px;
     display: flex;
-  } */
+    align-items: center;
+    padding-bottom: 19px;
+  }
 
   .header-sns p {
     font-size: 14px;
     color: #fff;
     font-weight: 700;
-    margin-top: 2.5px;
+    margin-top: 6px;
   }
 
   .header-sns .sns {
@@ -543,12 +547,12 @@ body {
   }
 
   .header-sns .sns img {
-    width: 22px;
+    width: 21px;
   }
 
   .header-sns .sns img.line {
     margin-right: 16px;
-    width: 21.5px;
+    width: 21px;
   }
 
   .header .header-sns .icon-white {
@@ -557,7 +561,17 @@ body {
 
   .nav-list {
     justify-content: left;
-    margin-left: 30px;
+    margin: 0;
+    width: auto;
+    padding-bottom: 20px;
+  }
+
+  .header .list-box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+    /* margin-bottom: 20px; */
   }
 
 
@@ -566,6 +580,11 @@ body {
     font-size: 17px;
     margin-top: 9px;
     min-width: 60px;
+  }
+
+  .header.scrolled .header-sns {
+    height: 80px;
+    padding-bottom: 7px;
   }
 
   .header.scrolled .header-sns p {
@@ -579,4 +598,50 @@ body {
   .header.scrolled .header-sns .icon-black {
     display: none;
   }
+
+  /*==============================================================
+    　　PC_フッター
+  ==============================================================*/
+  .footer .info-box {
+    display: grid;
+    grid-template-columns: 350px auto;
+    margin-bottom: 43px;
+  }
+
+  .footer .logo-box img {
+    margin-left: -3px;
+  }
+
+  .footer .info .info-item {
+    font-size: 14.5px;
+  }
+
+  .footer .info-box .text {
+    margin: 0;
+    margin-top: -10px;
+    font-size: 13px;
+    max-width: 582px;
+  }
+
+  .footer-link .foot-site-map {
+    display: flex;
+  }
+
+  .footer-link .foot-site-map p {
+    margin-right: 15px;
+  }
+
+}
+
+@media screen and (min-width: 1180px) {
+  /* パソコン用レイアウト 1400px以上の範囲に収めるデザインはこの中に記述 */
+  /*==============================================================
+    　　ヘッダー
+  ==============================================================*/
+  /* ====================  ================== */
+  .header .list-box {
+    display: flex;
+    padding: 0 45px;
+  }
+
 }
