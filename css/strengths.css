@@ -67,113 +67,59 @@ body {
   }
 
   /*==============================================================
-    　　会社情報
+    　　選ばれる理由
   ==============================================================*/
-  .sec-info {
-    font-family: "Noto Sans JP";
-  }
-
-  .sec-info .sec-title {
-    margin-top: 80px;
-  }
-
-  .sec-info .sec-title {
-    text-align: center;
-  }
-
-  .sec-info .sec-title .title {
-    font-size: 24px;
-    font-family: "Noto Sans JP";
-    font-weight: 500;
-    color: #289A49;
-    margin-bottom: 14px;
-  }
-
-  .sec-info .sec-title .title-jp {
-    font-size: 15px;
-    line-height: 1.6;
-    font-weight: 500;
-  }
-
-  .sec-info .info {
-    margin-top: 30px;
-  }
-
-  .sec-info .info .info-item {
-    display: grid;
-    grid-template-columns: 120px 1fr;
+  .sec-reason {
     width: 80%;
     margin: 0 auto;
-    padding: 20px 0;
-    line-height: 1.8;
-    border-bottom: 1px dotted #ccc;
-    font-weight: normal;
+    margin-top: 60px;
+    padding-bottom: 120px;
   }
 
-  .sec-info .info .info-item dt {
-    font-weight: normal;
+  .reason-img {
+    width: 100%;
+    height: 234px;
+    margin-top: 50px;
   }
 
-  .sec-info .info .info-item .map-link {
-    color: #289A49;
-    /* border-bottom: solid 2px #289A49; */
-    text-decoration: underline;
-  }
-
-  /*==============================================================
-    　　画像
-  ==============================================================*/
-  .about-bg {
-    height: 183px;
-    margin-top: 80px;
-    margin-right: 10%;
-  }
-
-  .about-bg img {
+  .reason-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  /*==============================================================
-    　　社長紹介
-  ==============================================================*/
-  .sec-president {
-    width: 80%;
-    margin: 80px 10% 0 10%;
-    display: block;
-    padding-bottom: 80px;
-  }
-
-  .president-img img {
-    width: 100%;
-    height: auto;
-  }
-
-  .sec-president .name {
-    font-size: 30px;
-    margin-top: 6px;
-    display: flex;
-    align-items: end;
-  }
-
-  .sec-president .name .name-en {
+  .reason-item .num {
     font-size: 14px;
-    margin-left: 20px;
-    margin-bottom: 5px;
-  }
-
-  .sec-president .position {
-    font-size: 12px;
-    font-weight: bold;
     color: #289A49;
-    margin: 30px 0;
+    margin-top: 20px;
   }
 
-  .sec-president .text {
-    margin-top: 20px;
-    line-height: 1.8;
+  .reason-item .title-en {
+    font-size: 24px;
+    color: #289A49;
+    margin-top: 5px;
+    line-height: 1.6;
+    letter-spacing: 0.05em;
   }
+
+  .reason-item .title-jp {
+    font-family: "Noto Sans JP";
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    line-height: 1.6;
+
+  }
+
+  .reason-item .text {
+    font-family: "Noto Sans JP";
+    font-size: 14px;
+    width: 90%;
+    letter-spacing: 0.1em;
+    line-height: 1.8;
+    margin-top: 15px;
+  }
+
 
 
 }
