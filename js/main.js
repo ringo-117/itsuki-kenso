@@ -135,12 +135,12 @@
 
 
 
-// ==============================
-// ヘッダースクロール（スタイル変化）
-// ==============================
+// =================================
+// ヘッダースクロール（スタイル変化）SP版
+// =================================
 document.addEventListener('DOMContentLoaded', () => {
-  const header = document.querySelector('.tb-nav .header');
-  const hero = document.querySelector('.sec-top');
+  const header = document.querySelector('.sp-nav .header');
+  const hero = document.querySelector('.sec-start');
   if (!header || !hero) return;
 
   const headerObserver = new IntersectionObserver(entries => {
@@ -167,6 +167,80 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, 100);
 });
+
+// =================================
+// ヘッダースクロール（スタイル変化）TB版
+// =================================
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('.tb-nav .header');
+  const hero = document.querySelector('.sec-start');
+  if (!header || !hero) return;
+
+  const headerObserver = new IntersectionObserver(entries => {
+    const entry = entries[0];
+    if (entry.isIntersecting) {
+      header.classList.remove('scrolled');
+    } else {
+      header.classList.add('scrolled');
+    }
+  }, {
+    rootMargin: '-50px 0px 0px 0px'
+  });
+
+  headerObserver.observe(hero);
+
+  // 📌 初期強制チェック
+  setTimeout(() => {
+    const rect = hero.getBoundingClientRect();
+    const isAbove = rect.bottom <= 50;
+    if (isAbove) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  }, 100);
+});
+
+
+
+
+// function initHeaderScrollObserver({
+//   headerSelector = '.tb-nav .header',
+//   // targetSelector = '.sec-top',
+//   targetSelector = '.sec-start',
+//   rootMargin = '-50px 0px 0px 0px',
+//   scrollClass = 'scrolled'
+// } = {}) {
+//   const header = document.querySelector(headerSelector);
+//   const target = document.querySelector(targetSelector);
+//   if (!header || !target) return;
+
+//   const observer = new IntersectionObserver(entries => {
+//     const entry = entries[0];
+//     if (entry.isIntersecting) {
+//       header.classList.remove(scrollClass);
+//     } else {
+//       header.classList.add(scrollClass);
+//     }
+//   }, { rootMargin });
+
+//   observer.observe(target);
+
+//   // 初期表示対策（強制チェック）
+//   setTimeout(() => {
+//     const rect = target.getBoundingClientRect();
+//     const isAbove = rect.bottom <= Math.abs(parseInt(rootMargin));
+//     if (isAbove) {
+//       header.classList.add(scrollClass);
+//     } else {
+//       header.classList.remove(scrollClass);
+//     }
+//   }, 100);
+// }
+
+
+
+
 
 // ===================================================
 // LINE

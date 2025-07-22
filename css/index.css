@@ -15,9 +15,6 @@
 
 @media screen and (min-width: 320px) {
   /* スマホ用レイアウト 320px以上の範囲に収めるデザインはこの中に記述 */
-  .pc-only {
-    display: none;
-  }
 
   /*==============================================================
     　　ヒーロー
@@ -234,12 +231,16 @@
   }
 
   .more {
-    display: flex;
-    align-items: center;
     font-family: "Noto Sans JP";
     font-size: 16px;
     font-weight: 700;
     letter-spacing: 0.16em;
+  }
+
+  .more a {
+    /* display: inline-block; */
+    display: flex;
+    align-items: center;
   }
 
   .more .more-arrow img{
@@ -536,13 +537,7 @@
 
 @media screen and (min-width: 1024px) {
   /* パソコン用レイアウト 1024px以上の範囲に収めるデザインはこの中に記述 */
-  .pc-only {
-    display: block;
-  }
-
-  .pc-none {
-    display: none;
-  }
+  
   /*==============================================================
     　　PC_ヒーロー
   ==============================================================*/

@@ -21,6 +21,10 @@ body {
     display: none;
   }
 
+  .pc-only {
+    display: none;
+  }
+
   /*==============================================================
     　　ヘッダー
   ==============================================================*/
@@ -113,7 +117,21 @@ body {
   }
 
   .btn.active i {
-    left: 15.5px;
+    left: 15px;
+  }
+
+   /* ヘッダーがスクロールされたときに追加されるクラス */
+  .header.scrolled .btn {
+    background-color: #289A49;
+  }
+  .header.scrolled .btn i {
+    background-color: #fff;
+  }
+  .header.scrolled .btn.active {
+    background-color: #fff;
+  }
+  .header.scrolled .btn.active i {
+    background-color: #289A49;
   }
 
   /* メニューのデザイン*/
@@ -180,6 +198,42 @@ body {
     font-size: 16px;
     margin-left: 3px;
     text-align: left;
+  }
+
+
+
+  /* ========== TOP以外のページ（top-others）=========== */
+  /* ハンバーガーメニュー */
+  /* 初めのスタイル */
+  .top-others .header .btn {
+    background-color: #289A49;
+  }
+  .top-others .header .btn i{
+    background-color: #fff;
+  }
+
+  /* メニューが開いた際のスタイル */
+  .top-others .btn.active {
+    background-color: #289A49;
+    border: solid 1px #fff;
+  }
+  .top-others .btn.active i {
+    background-color: #fff;
+  }
+  .top-others .btn.active i {
+    left: 14.3px;
+  }
+
+  /* scrolled後、メニューが開いた際のスタイル */
+  .top-others  .header.scrolled .btn.active {
+    background-color: #289A49;
+    border: solid 1px #fff;
+  }
+  .top-others .header.scrolled .btn.active i {
+    background-color: #fff;
+  }
+  .top-others .header.scrolled .btn.active i {
+    left: 14.3px;
   }
 
   /*==============================================================
@@ -401,7 +455,7 @@ body {
     margin: 0 10px;
   }
 
-  .nav-item a.link-01{
+  .nav-item a.active{
     padding-bottom: 7px;
     border-bottom: solid 1px #fff;
   }
@@ -452,7 +506,7 @@ body {
     /* justify-content: end; */
   }
 
-  .header.scrolled .nav-item a.link-01{
+  .header.scrolled .nav-item a.active{
     border-bottom: solid 1px #333;
   }
 
@@ -502,6 +556,14 @@ body {
 
 @media screen and (min-width: 1024px) {
   /* パソコン用レイアウト 1024px以上の範囲に収めるデザインはこの中に記述 */
+
+  .pc-only {
+    display: block;
+  }
+
+  .pc-none {
+    display: none;
+  }
   /*==============================================================
     　　PC_ヘッダー
   ==============================================================*/
