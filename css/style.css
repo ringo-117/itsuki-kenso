@@ -379,11 +379,16 @@ body {
 
   .nav-list {
     height: 150px;
-    width: 82.4%;
+    /* width: 82.4%; */
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: right;
     margin-right: 20px;
+  }
+
+  .header .list-box {
+    margin-right: 12px;
   }
 
   .nav-item {
@@ -572,6 +577,7 @@ body {
     width: 100%;
     padding: 0 20px;
     /* margin-bottom: 20px; */
+    margin-right: 0;
   }
 
 
@@ -629,6 +635,10 @@ body {
 
   .footer-link .foot-site-map p {
     margin-right: 15px;
+  }
+
+  .footer-link .foot-site-map p.pc-only {
+    font-weight: 580;
   }
 
 }
