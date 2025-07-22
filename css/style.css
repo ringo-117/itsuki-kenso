@@ -514,7 +514,7 @@ body {
     margin: 60px auto 0;
   }
 
-   .header .logo-box img  {
+  .header .logo-box img  {
     width: 95px;
   }
 
@@ -570,6 +570,10 @@ body {
     margin: 0;
     width: auto;
     padding-bottom: 20px;
+  }
+
+  .nav-item {
+    margin: 0 14px;
   }
 
   .header .list-box {
