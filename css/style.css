@@ -646,6 +646,10 @@ body {
     font-weight: 580;
   }
 
+  .footer-link .foot-site-map p.pc-only.end {
+    margin-right: 120px;
+  }
+
 }
 
 @media screen and (min-width: 1180px) {
