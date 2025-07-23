@@ -140,7 +140,7 @@
 // =================================
 document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('.sp-nav .header');
-  const hero = document.querySelector('.sec-start');
+  const hero = document.querySelector('.trigger-header');
   if (!header || !hero) return;
 
   const headerObserver = new IntersectionObserver(entries => {
@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // =================================
 document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('.tb-nav .header');
-  const hero = document.querySelector('.sec-start');
+  const hero = document.querySelector('.trigger-header');
   if (!header || !hero) return;
 
   const headerObserver = new IntersectionObserver(entries => {

@@ -16,55 +16,7 @@ body {
 
 @media screen and (min-width: 320px) {
   /* スマホ用レイアウト 320px以上の範囲に収めるデザインはこの中に記述 */
-  /*==============================================================
-    　　main-top
-  ==============================================================*/
-  .main-top .main-item {
-    width: 90%;
-    margin: 50px 0 0 10%;
-  }
 
-  .main-top .main-item p {
-    font-size: 36px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    padding-top: 25%;
-    color: #289A49;
-
-    /* font-size: 48px; */
-    z-index: 1;
-    line-height: 1;
-    position: absolute;
-    left: 10%;
-  }
-
-  .main-img {
-    width: 90%;
-    height: 175px;
-    margin-left: 10%;
-    overflow: hidden;
-  }
-
-  .main-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .main-top .text-box {
-    width: 80%;
-    margin: -40px 0 0 10%;
-    padding-top: 40px;
-    line-height: 1.8;
-    background-color: #edece6;
-    border-radius: 0 25px 0 0;
-    position: relative;
-    z-index: 1;
-  }
-
-  .main-top .text-box p {
-    width: 90%;
-  }
 
   /*==============================================================
     　　会社情報
@@ -96,18 +48,23 @@ body {
   }
 
   .sec-info .info {
+    width: 80%;
+    margin: 0 auto;
     margin-top: 30px;
   }
 
   .sec-info .info .info-item {
     display: grid;
     grid-template-columns: 120px 1fr;
-    width: 80%;
-    margin: 0 auto;
     padding: 20px 0;
     line-height: 1.8;
     border-bottom: 1px dotted #ccc;
     font-weight: normal;
+    align-items: center;
+  }
+
+  .sec-info .info .info-item .list {
+    margin-left: 3px;
   }
 
   .sec-info .info .info-item dt {
@@ -150,6 +107,13 @@ body {
     height: auto;
   }
 
+  .sec-president .position {
+    font-size: 12px;
+    font-weight: bold;
+    color: #289A49;
+    margin: 30px 0;
+  }
+
   .sec-president .name {
     font-size: 30px;
     margin-top: 6px;
@@ -163,17 +127,135 @@ body {
     margin-bottom: 5px;
   }
 
-  .sec-president .position {
-    font-size: 12px;
-    font-weight: bold;
-    color: #289A49;
-    margin: 30px 0;
-  }
-
   .sec-president .text {
     margin-top: 20px;
     line-height: 1.8;
   }
 
+}
 
+@media screen and (min-width: 640px) {
+  /* タブレット用レイアウト 640px以上の範囲に収めるデザインはこの中に記述 */
+  /*==============================================================
+    　　TB_会社情報
+  ==============================================================*/
+  .sec-info .sec-title {
+    margin-top: 100px;
+  }
+
+  .sec-info .sec-title .title {
+    font-size: 36px;
+  }
+
+  .sec-info .info {
+    margin: 40px 0 0 16.66%;
+    width: 74.97%;
+  }
+
+  .sec-info .info .info-item {
+    grid-template-columns: 22.2% 77.8%;
+    padding: 30px 0;
+    line-height: 2;
+  }
+
+  .sec-info .info .info-item .list {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    row-gap: 20px;
+  }
+
+  /*==============================================================
+    　　TB_画像
+  ==============================================================*/
+  .about-bg {
+    width: 91.57%;
+    height: 406px;
+    margin: 100px 0 0 0;
+  }
+
+  /*==============================================================
+    　　TB_社長紹介
+  ==============================================================*/
+  .sec-president {
+    width: 74.97%;
+    margin: 100px 0 0 16.66%;
+    padding-bottom: 100px;
+  }
+
+  .president-img {
+    width: 80%;
+  }
+
+  .sec-president .position {
+    font-size: 16px;
+    margin: 40px 0 30px;
+  }
+
+  .sec-president .text {
+    margin-top: 20px;
+    line-height: 2;
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+  /* パソコン用レイアウト 1024px以上の範囲に収めるデザインはこの中に記述 */
+  /*==============================================================
+    　　PC_会社情報
+  ==============================================================*/
+  .sec-info .sec-title {
+    margin-top: 120px;
+  }
+
+  .sec-info .info .info-item .list {
+    grid-template-columns: 150px 150px 1fr;
+  }
+
+  /*==============================================================
+    　　PC_画像
+  ==============================================================*/
+  .about-bg {
+    width: 83.4%;
+    height: 533px;
+    /* max-height: 80vh; */
+    margin: 150px 0 0 0;
+  }
+
+  /*==============================================================
+    　　PC_社長紹介
+  ==============================================================*/
+  .sec-president {
+    width: 74.97%;
+    margin: 150px 0 0 16.66%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 150px;
+  }
+
+  .president-img {
+    width: 100%;
+  }
+
+  .sec-president .text {
+    margin-top: 20px;
+    line-height: 2;
+    margin-bottom: 50px;
+  }
+
+  .sec-president .president-text-box {
+    margin-left: 6%;
+  }
+
+
+}
+
+@media screen and (min-width: 1400px) {
+  /* パソコン用レイアウト 1400px以上の範囲に収めるデザインはこの中に記述 */
+  /*==============================================================
+    　　PC_画像
+  ==============================================================*/
+  .about-bg {
+    height: 80vh;
+  }
 }

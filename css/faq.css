@@ -16,55 +16,6 @@ body {
 
 @media screen and (min-width: 320px) {
   /* スマホ用レイアウト 320px以上の範囲に収めるデザインはこの中に記述 */
-  /*==============================================================
-    　　main-top
-  ==============================================================*/
-  .main-top .main-item {
-    width: 90%;
-    margin: 50px 0 0 10%;
-  }
-
-  .main-top .main-item p {
-    font-size: 36px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    padding-top: 25%;
-    color: #289A49;
-
-    /* font-size: 48px; */
-    z-index: 1;
-    line-height: 1;
-    position: absolute;
-    left: 10%;
-  }
-
-  .main-img {
-    width: 90%;
-    height: 175px;
-    margin-left: 10%;
-    overflow: hidden;
-  }
-
-  .main-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .main-top .text-box {
-    width: 80%;
-    margin: -40px 0 0 10%;
-    padding-top: 40px;
-    line-height: 1.8;
-    background-color: #edece6;
-    border-radius: 0 25px 0 0;
-    position: relative;
-    z-index: 1;
-  }
-
-  .main-top .text-box p {
-    width: 90%;
-  }
 
   /*==============================================================
   　　よくある質問

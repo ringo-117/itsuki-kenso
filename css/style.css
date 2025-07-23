@@ -202,37 +202,37 @@ body {
 
 
 
-  /* ========== TOP以外のページ（top-others）=========== */
+  /* ========== TOP以外のページ（index-others）=========== */
   /* ハンバーガーメニュー */
   /* 初めのスタイル */
-  .top-others .header .btn {
+  .index-other .header .btn {
     background-color: #289A49;
   }
-  .top-others .header .btn i{
+  .index-other .header .btn i{
     background-color: #fff;
   }
 
   /* メニューが開いた際のスタイル */
-  .top-others .btn.active {
+  .index-other .btn.active {
     background-color: #289A49;
     border: solid 1px #fff;
   }
-  .top-others .btn.active i {
+  .index-other .btn.active i {
     background-color: #fff;
   }
-  .top-others .btn.active i {
+  .index-other .btn.active i {
     left: 14.3px;
   }
 
   /* scrolled後、メニューが開いた際のスタイル */
-  .top-others  .header.scrolled .btn.active {
+  .index-other .header.scrolled .btn.active {
     background-color: #289A49;
     border: solid 1px #fff;
   }
-  .top-others .header.scrolled .btn.active i {
+  .index-other .header.scrolled .btn.active i {
     background-color: #fff;
   }
-  .top-others .header.scrolled .btn.active i {
+  .index-other .header.scrolled .btn.active i {
     left: 14.3px;
   }
 
@@ -510,6 +510,14 @@ body {
     border-bottom: solid 1px #333;
   }
 
+  /* ========== TOP以外のページ（index-others）=========== */
+  .index-other .header .nav-item a {
+    color: #333; /* スクロール後のリンク文字色 */
+  }
+  .index-other .header .nav-item a.active{
+    border-bottom: solid 1px #333;
+  }
+
   /*==============================================================
     　　TB_コピー
   ==============================================================*/
@@ -674,6 +682,19 @@ body {
   }
 
   .header.scrolled .header-sns .icon-black {
+    display: none;
+  }
+
+  /* ========== TOP以外のページ（index-others）=========== */
+  .index-other .header-sns p {
+    color: #333;
+  }
+
+  .index-other .header .header-sns .icon-white {
+    display: block;
+  }
+
+  .index-other .header .header-sns .icon-black {
     display: none;
   }
 
