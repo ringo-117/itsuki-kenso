@@ -227,7 +227,9 @@ body {
   .sec-president {
     width: 74.97%;
     margin: 150px 0 0 16.66%;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5.7%;
     align-items: center;
     justify-content: space-between;
     padding-bottom: 150px;
@@ -240,11 +242,7 @@ body {
   .sec-president .text {
     margin-top: 20px;
     line-height: 2;
-    margin-bottom: 50px;
-  }
-
-  .sec-president .president-text-box {
-    margin-left: 6%;
+    margin-bottom: 20px;
   }
 
 
