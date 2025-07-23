@@ -63,6 +63,10 @@ body {
     align-items: center;
   }
 
+  .sec-info .info .info-item.address dd {
+    width: 185px;
+  }
+
   .sec-info .info .info-item .list {
     margin-left: 3px;
   }
