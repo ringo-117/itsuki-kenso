@@ -402,7 +402,8 @@ body {
 @media screen and (min-width: 640px) {
   /* タブレット用レイアウト 640px以上の範囲に収めるデザインはこの中に記述 */
 
-  .sp-nav {
+  .sp-nav,
+  .sp-only {
     display: none;
   }
 

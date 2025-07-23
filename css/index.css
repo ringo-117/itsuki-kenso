@@ -51,7 +51,8 @@
     letter-spacing: 0.05em;
     position: absolute;
     bottom: 5%;
-    left: 7.5%;
+    /* left: 7.5%; */
+    left: 7.3%;
     color: #fff;
     line-height: 1.8;
     /* margin-top: 50px; */
@@ -63,7 +64,8 @@
 
   .sec-top .scroll {
     position: absolute;
-    right: 5%;
+    /* right: 5%; */
+    right: 3%;
     bottom: 4%;
     width: 20%;
     height: auto;
@@ -77,7 +79,8 @@
     width: 15px;
     height: 42px;
     margin-top: -1px;
-    margin-right: -22px;
+    /* margin-right: -22px; */
+    margin-right: -20px;
   }
 
   .sec-top .scroll .arrow img {
@@ -85,7 +88,8 @@
   }
 
   .sec-top .scroll .circle img {
-    width: 83px;
+    /* width: 83px; */
+    width: 80px;
     animation: rotate-circle 20s linear infinite;
     display: inline-block;
   }
