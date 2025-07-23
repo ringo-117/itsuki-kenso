@@ -354,6 +354,7 @@ body {
     grid-template-columns: 85px 1fr;
     margin-bottom: 10px;
     font-weight: 400;
+    line-height: 1.5;
   }
 
   .footer .info .info-item dt {
@@ -545,6 +546,7 @@ body {
     grid-template-columns: 85px 1fr;
     margin-bottom: 10px;
     font-weight: 400;
+    line-height: 1.2;
   }
 
   .footer .text {
