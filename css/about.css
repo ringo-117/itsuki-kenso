@@ -227,7 +227,7 @@ body {
   }
 
   .sec-info .info .info-item .list {
-    grid-template-columns: 150px 150px 1fr;
+    grid-template-columns: 200px 185px 1fr;
   }
 
   .sec-info .info .info-item.area dd {
