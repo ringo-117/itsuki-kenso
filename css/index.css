@@ -21,7 +21,7 @@
   ==============================================================*/
   .sec-top {
     width: 100vw;
-    height: 100vh;
+    height: 100svh;
     max-height: 100vh;
     overflow: hidden;
     background-color: #289A49;
@@ -64,34 +64,43 @@
 
   .sec-top .scroll {
     position: absolute;
-    /* right: 5%; */
-    right: 3%;
-    bottom: 4%;
-    width: 20%;
+    right: 2%;
+    bottom: 5%;
+    /* width: 20%; */
     height: auto;
+    max-width: 160px;
+    max-height: 160px;
+
+
+    width: 22%;
   }
 
   .sec-top .scroll .arrow {
     position: absolute;
     right: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
-    width: 15px;
+    /* width: 15px;
     height: 42px;
-    margin-top: -1px;
-    /* margin-right: -22px; */
-    margin-right: -20px;
+    margin-top: -20px;
+    margin-right: -8px; */
+
+    width: 24px;
+    height: 51px;
+    margin-top: -20px;
+    margin-right: -13px;
+
+
   }
 
   .sec-top .scroll .arrow img {
-    width: 12px;
+    width: 90%;
+    height: auto;
   }
 
   .sec-top .scroll .circle img {
-    /* width: 83px; */
-    width: 80px;
+    width: 100%;
+    height: auto;
     animation: rotate-circle 20s linear infinite;
-    display: inline-block;
   }
 
   @keyframes rotate-circle {
@@ -399,7 +408,7 @@
     font-weight: 500;
   }
 
-  .sec-top .scroll {
+  /* .sec-top .scroll {
     right: 6.25%;
     bottom: 8%;
     width: 12%;
@@ -419,7 +428,22 @@
     width: 105px;
     animation: rotate-circle 20s linear infinite;
     display: inline-block;
+  } */
+
+  .sec-top .scroll {
+    right: 6.25%;
+    bottom: 8%;
+    /* width: 12%; */
+    height: auto;
+
+    width: 13%;
+
   }
+
+  .sec-top .scroll .arrow img {
+    width: 100%;
+  }
+
 
   /*==============================================================
     　　TB_PICKUP
@@ -545,7 +569,7 @@
   /*==============================================================
     　　PC_ヒーロー
   ==============================================================*/
-  .sec-top .scroll {
+  /* .sec-top .scroll {
     right: 3%;
     bottom: 8%;
     width: 12%;
@@ -555,6 +579,36 @@
   .sec-top .scroll .arrow {
     margin-top: 0px;
     margin-right: 0px;
+  } */
+
+  .sec-top .scroll {
+    position: absolute;
+    right: 6.25%;
+    bottom: 8%;
+    z-index: 100;
+    width: 8.3%;
+    height: auto;
+    max-width: 165px;
+    max-height: 165px;
+
+    width: 9%;
+
+  }
+
+  .sec-top .scroll .arrow {
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    /* width: 15px;
+    height: 42px;
+    margin-top: -20px;
+    margin-right: -8px; */
+
+
+    width: 24px;
+    height: 51px;
+    margin-top: -21px;
+    margin-right: -13px;
   }
 
    /*==============================================================
@@ -713,9 +767,9 @@
 @media screen and (min-width: 1400px) {
   /* パソコン用レイアウト 1400px以上の範囲に収めるデザインはこの中に記述 */
   /* ==================== ヒーロー ================== */
-  .sec-top .scroll .arrow {
+  /* .sec-top .scroll .arrow {
     margin-right: 40px;
-  }
+  } */
 
   /* ==================== ABOUT ================== */
   .about-info {
