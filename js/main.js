@@ -212,8 +212,20 @@ function initHeaderScrollObserver(navSelector) {
   const hero = document.querySelector('.trigger-header');
   if (!header || !hero) return;
 
-  const headerObserver = new IntersectionObserver(entries => {
+  // スクロール時に一番上に戻ったら確実にscrolledを外す
+  window.addEventListener('scroll', () => {
+    if (window.scrollY === 0) {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  // IntersectionObserverで通常の切り替え
+  const observer = new IntersectionObserver(entries => {
     const entry = entries[0];
+
+    // 一番上に戻ったときは、observerでscrolledを付けない（scrollイベントに任せる）
+    if (window.scrollY === 0) return;
+
     if (entry.isIntersecting) {
       header.classList.remove('scrolled');
     } else {
@@ -224,19 +236,17 @@ function initHeaderScrollObserver(navSelector) {
     threshold: 0
   });
 
-  headerObserver.observe(hero);
+  observer.observe(hero);
 
-  // 📌 スクロールで一番上に戻ったときにscrolledを外す
-  window.addEventListener('scroll', () => {
-    if (window.scrollY <= 0) {
-      header.classList.remove('scrolled');
-    }
-  });
-
-  // 📌 初期チェック
+  // 初期状態チェック（scrollY === 0 ならscrolled外す）
   setTimeout(() => {
+    if (window.scrollY === 0) {
+      header.classList.remove('scrolled');
+      return;
+    }
+
     const rect = hero.getBoundingClientRect();
-    const isAbove = rect.top <= -50; // ←ここをtopに変更して正確に判定
+    const isAbove = rect.top <= -50;
     if (isAbove) {
       header.classList.add('scrolled');
     } else {
@@ -244,6 +254,7 @@ function initHeaderScrollObserver(navSelector) {
     }
   }, 100);
 }
+
 
 
 
