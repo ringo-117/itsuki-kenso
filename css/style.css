@@ -32,8 +32,9 @@ body {
   /* アニメーション前の状態 */
   .fade-up {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(50px);
     transition: all 0.8s ease-out;
+    transition-delay: 0.1s;
   }
 
   /* 表示されたらこのクラスが付く */
