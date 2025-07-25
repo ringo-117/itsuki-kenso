@@ -187,3 +187,17 @@ window.addEventListener('resize', handleScroll);
 // 初回実行
 handleScroll();
 
+
+
+// ===================================================
+// ABOUT（.about-bg）
+// ===================================================
+$(window).on('scroll', function(){
+
+  var scrollTop = $(window).scrollTop();
+  var bgPosition = scrollTop / 10; //スクロール後のポジションを指定（値を大きくすると移動距離が小さくなる）
+
+  if(bgPosition){
+    $('.about-bg').css('background-position', 'center top -'+ bgPosition + 'px');
+  }
+});

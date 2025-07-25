@@ -99,13 +99,21 @@ body {
     height: 183px;
     margin-top: 80px;
     margin-right: 10%;
+    overflow: hidden;
+
+    background-image: url(../img/bottom-bg.webp);
+    background-repeat: no-repeat;
+    background-size: 150%;
+    background-position: center top;
   }
 
-  .about-bg img {
+  /* .about-bg img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
+    transform: translate3d(0px, 0px, 0px) scale(1.3);
+    will-change: transform;
+  } */
 
   /*==============================================================
     　　社長紹介
