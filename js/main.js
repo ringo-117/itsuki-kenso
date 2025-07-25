@@ -79,128 +79,6 @@
 // ===================================================
 // ヘッダースクロール（スタイル変化）
 // ===================================================
-// document.addEventListener('DOMContentLoaded', function () {
-  // const header = document.querySelector('.tb-nav .header');
-  // const trigger = document.querySelector('.trigger-header');
-
-//   const headerObserver = new IntersectionObserver(
-//     function (entries) {
-//       if (entries[0].isIntersecting) {
-//         header.classList.remove('scrolled');
-//       } else {
-//         header.classList.add('scrolled');
-//       }
-//     },
-//     { threshold: 0 }
-//   );
-
-//   if (trigger) {
-//     headerObserver.observe(trigger);
-//   }
-
-
-//   // 初回強制チェック（レンダリング後に一度だけ）
-//   setTimeout(() => {
-//     const rect = trigger.getBoundingClientRect();
-//     const isInView = rect.top < window.innerHeight && rect.bottom >= 0;
-
-//     if (isInView) {
-//       header.classList.remove('scrolled');
-//     } else {
-//       header.classList.add('scrolled');
-//     }
-//   }, 100); // 100msほど待つことでレイアウト確定を待つ
-// });
-
-
-
-
-
-
-// const hero = document.querySelector('.sec-top');
-// const options = { rootMargin: '-50px 0px 0px 0px' }; // ヒーロー終わりに微調整
-
-// const observer = new IntersectionObserver(entries => {
-//   if (entries[0].isIntersecting) {
-//     header.classList.add('scrolled');
-//   } else {
-//     header.classList.remove('scrolled');
-//   }
-// }, options);
-
-// observer.observe(hero);
-
-
-
-
-
-
-// =================================
-// ヘッダースクロール（スタイル変化）SP版
-// =================================
-// document.addEventListener('DOMContentLoaded', () => {
-//   const header = document.querySelector('.sp-nav .header');
-//   const hero = document.querySelector('.trigger-header');
-//   if (!header || !hero) return;
-
-//   const headerObserver = new IntersectionObserver(entries => {
-//     const entry = entries[0];
-//     if (entry.isIntersecting) {
-//       header.classList.remove('scrolled');
-//     } else {
-//       header.classList.add('scrolled');
-//     }
-//   }, {
-//     rootMargin: '-50px 0px 0px 0px'
-//   });
-
-//   headerObserver.observe(hero);
-
-//   // 📌 初期強制チェック
-//   setTimeout(() => {
-//     const rect = hero.getBoundingClientRect();
-//     const isAbove = rect.bottom <= 50;
-//     if (isAbove) {
-//       header.classList.add('scrolled');
-//     } else {
-//       header.classList.remove('scrolled');
-//     }
-//   }, 100);
-// });
-
-// =================================
-// ヘッダースクロール（スタイル変化）TB版
-// =================================
-// document.addEventListener('DOMContentLoaded', () => {
-//   const header = document.querySelector('.tb-nav .header');
-//   const hero = document.querySelector('.trigger-header');
-//   if (!header || !hero) return;
-
-//   const headerObserver = new IntersectionObserver(entries => {
-//     const entry = entries[0];
-//     if (entry.isIntersecting) {
-//       header.classList.remove('scrolled');
-//     } else {
-//       header.classList.add('scrolled');
-//     }
-//   }, {
-//     rootMargin: '-50px 0px 0px 0px'
-//   });
-
-//   headerObserver.observe(hero);
-
-//   // 📌 初期強制チェック
-//   setTimeout(() => {
-//     const rect = hero.getBoundingClientRect();
-//     const isAbove = rect.bottom <= 50;
-//     if (isAbove) {
-//       header.classList.add('scrolled');
-//     } else {
-//       header.classList.remove('scrolled');
-//     }
-//   }, 100);
-// });
-
 document.addEventListener('DOMContentLoaded', () => {
   initHeaderScrollObserver('.sp-nav'); // SP用
   initHeaderScrollObserver('.tb-nav'); // TB用
@@ -231,9 +109,29 @@ function initHeaderScrollObserver(navSelector) {
   document.addEventListener('DOMContentLoaded', checkScroll);
 }
 
+// =============================
+// スクロール出現アニメーション
+// =============================
+// .fade-up  : 下からフェードアップ
+// .img-wrap: 左から右に表示
+// =============================
+document.addEventListener('DOMContentLoaded', () => {
+  const targets = document.querySelectorAll('.fade-up, .img-wrap');
+  if (targets.length === 0) return; // 対象がなければ何もしない
 
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        obs.unobserve(entry.target); // 一度表示されたら監視終了
+      }
+    });
+  }, {
+    threshold: 0.2 // 20% 見えたら発火
+  });
 
-
+  targets.forEach(target => observer.observe(target));
+});
 
 
 // ===================================================

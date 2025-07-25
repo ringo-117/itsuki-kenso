@@ -26,6 +26,73 @@ body {
   }
 
   /*==============================================================
+    　　アニメーション
+  ==============================================================*/
+  /* ==================== フェードアップ（ページ内）================== */
+  /* アニメーション前の状態 */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+  }
+
+  /* 表示されたらこのクラスが付く */
+  .fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* 遅延用クラス */
+  .delay-1 {
+    transition-delay: 0.3s;
+  }
+  .delay-2 {
+    transition-delay: 0.6s;
+  }
+  .delay-3 {
+    transition-delay: 0.9s;
+  }
+
+  /* ==================== 画像（横表示）================== */
+  .img-wrap {
+    opacity: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .img-wrap img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transform: scale(1.05); /* ちょっと拡大しておくとプロっぽく見える */
+    transition: transform 0.8s ease;
+  }
+
+  .img-wrap.show {
+    opacity: 1;
+  }
+
+  .img-wrap.show img {
+    transform: scale(1); /* 元のサイズに戻す */
+  }
+
+  /* マスクアニメーション */
+  .img-wrap::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #EFEAE2;
+    transform: translateX(0); /* 初期状態は全体覆う */
+    z-index: 1;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .img-wrap.show::before {
+    transform: translateX(100%); /* 右にスライドして消える */
+  }
+
+
+  /*==============================================================
     　　ヘッダー
   ==============================================================*/
   .header {
@@ -120,7 +187,7 @@ body {
     left: 15px;
   }
 
-   /* ヘッダーがスクロールされたときに追加されるクラス */
+  /* ヘッダーがスクロールされたときに追加されるクラス */
   .header.scrolled .btn {
     background-color: #289A49;
   }
@@ -251,7 +318,7 @@ body {
     font-weight: bold;
     z-index: 16;
     opacity: 0;
-    transition: all 0.5s ease;
+    /* transition: all 0.5s ease; */
     background-color: #D0C4A2;
   }
 
@@ -752,22 +819,91 @@ body {
     padding: 0 80px 0 55px;
   }
 
-  /* .nav-list li a:hover {
-    position: absolute;
-    bottom: -8px;
-    left: 0px;
-    content: "";
-    width: 100%;
-    height: 1px;
-    transform: scale(0, 1);
-    transform-origin: right top;
-    background: rgba(255, 255, 255, 0.8);
-    transition: transform 0.3s;
-  } */
-  /* ==================== フッター ================== */
-
+  /*==============================================================
+    　　フッター
+  ==============================================================*/
   .footer .info-box {
     grid-template-columns: 380px auto;
   }
+
+}
+
+@media screen and (min-width: 1400px) {
+  /* パソコン用レイアウト 1400px以上の範囲に収めるデザインはこの中に記述 */
+  /*==============================================================
+    　　ホバーアニメーション
+  ==============================================================*/
+  /* ==================== snsアイコン ================== */
+  .header-sns .sns a,
+  .footer-link .sns a {
+    transition: opacity 0.3s;
+  }
+
+  .header-sns .sns a:hover,
+  .footer-link .sns a:hover {
+    opacity: 0.6;
+  }
+
+  /* ==================== navリンク＿ホバー ================== */
+  /* リンク全体に基準を設定 */
+  .nav-item a {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+  }
+
+  /* 疑似要素でアニメーション下線を作成 */
+  .nav-item a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    transform: scaleX(0);
+    transform-origin: right center;
+    transition: transform 0.3s ease;
+  }
+
+  /* ホバー時：左からスライド表示 */
+  .nav-item a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left center;
+  }
+
+  .nav-item a.active::after {
+    transform: scaleX(0);
+  }
+
+  /* ヘッダーがスクロールされたときに追加されるクラス */
+  .header.scrolled .nav-item a::after {
+    background-color: #333;
+  }
+
+  /* ========== TOP以外のページ（index-others）=========== */
+  /* navリンク＿ホバー */
+  .index-other .nav-item a::after {
+    background-color: #333;
+  }
+
+
+  .nav-item a.active{
+    padding-bottom: 10px;
+  }
+
+  .nav-list {
+    padding-bottom: 10px;
+  }
+
+  /* ==================== LINEタグ ================== */
+  .line-box {
+    transition: padding-right 0.8s ease, all 0.8s ease;
+  }
+
+  .line-box:hover {
+    padding-right: 65px;
+  }
+
 
 }

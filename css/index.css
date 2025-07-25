@@ -16,6 +16,10 @@
 @media screen and (min-width: 320px) {
   /* スマホ用レイアウト 320px以上の範囲に収めるデザインはこの中に記述 */
 
+  .hover-img {
+    display: none;
+  }
+
   /*==============================================================
     　　ヒーロー
   ==============================================================*/
@@ -256,9 +260,13 @@
     align-items: center;
   }
 
+  .more a p {
+    margin-right: 16px;
+  }
+
   .more .more-arrow img{
     width: 48px;
-    margin-left: 16px;
+    /* margin-left: 16px; */
   }
 
   .sec-about .text {
@@ -715,6 +723,10 @@
     margin-bottom: 18px;
   }
 
+  .sec-about .more a {
+    justify-content: end;
+  }
+
   /*==============================================================
     　　PC_STRENGTHS
   ==============================================================*/
@@ -773,12 +785,55 @@
 
   /* ==================== ABOUT ================== */
   .about-info {
-    grid-template-columns: 250px 1fr 200px;
+    grid-template-columns: 300px 1fr 200px;
   }
 
   .sec-about .text {
     max-width: 730px;
   }
+
+  /* ========== 詳しく見るアイコン=========== */
+  .hover-img {
+    display: block;
+  }
+
+  .more-arrow {
+    position: relative;
+    width: 48px; /* ← 矢印画像の横幅に合わせて調整 */
+    height: 46px; /* ← 矢印画像の縦幅に合わせて調整 */
+    display: inline-block;
+    flex-shrink: 0;
+  }
+
+  .more-arrow img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* コンテナにぴったり */
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.4s ease;
+    display: block;
+  }
+
+  .more-arrow img:nth-child(1) {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .more-arrow img:nth-child(2) {
+    opacity: 0;
+    z-index: 2;
+  }
+
+  .more a:hover .more-arrow img:nth-child(1) {
+    opacity: 0;
+  }
+
+  .more a:hover .more-arrow img:nth-child(2) {
+    opacity: 1;
+  }
+
 
   /*==============================================================
     　　フッター上
@@ -786,4 +841,5 @@
   .bottom-bg img {
     display: none;
   }
+
 }
