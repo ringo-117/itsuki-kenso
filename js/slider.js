@@ -26,7 +26,7 @@ const swiper = new Swiper(".swiper", {
   breakpoints: {
     // 0px以上（スマホなど）
     0: {
-      slidesPerView: 1.2,
+      slidesPerView: 1.3,
       spaceBetween: 20,
     },
     // 640px以上（タブレットなど）

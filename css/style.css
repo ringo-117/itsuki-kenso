@@ -17,7 +17,9 @@ body {
 @media screen and (min-width: 320px) {
   /* スマホ用レイアウト 320px以上の範囲に収めるデザインはこの中に記述 */
 
-  .tb-nav {
+  .pc-nav,
+  .pc-item,
+  .container-sns {
     display: none;
   }
 
@@ -121,8 +123,6 @@ body {
     width: 100px;
     height: 120px;
     display: inline-block;
-    /* justify-items: center;
-    align-content: center; */
     display: grid;
     place-content: center;
     padding-right: 2px;
@@ -230,7 +230,6 @@ body {
   /* メニュー黒ポチを消す */
   .nav-list {
     list-style: none;
-    /* margin-top: 30vh; */
   }
 
   .nav-item{
@@ -319,7 +318,6 @@ body {
     font-weight: bold;
     z-index: 16;
     opacity: 0;
-    /* transition: all 0.5s ease; */
     background-color: #D0C4A2;
   }
 
@@ -329,18 +327,12 @@ body {
   }
 
   .line-box a {
-    /* margin: 0;
-    padding: 0; */
     width: 40px;
     max-width: 40px;
     height: 190px;
     justify-items: center;
-    /* border-radius: 13px 0 0 13px;
-    padding: 15px 0 16px 4px; */
     white-space: nowrap;
     display: inline-block;
-    /* align-content: center; */
-    /* padding-bottom: 33px; */
     padding-bottom: 23px;
     display: grid;
     place-content: center;
@@ -359,7 +351,6 @@ body {
     margin: 0 auto;
     font-size: 16px;
     letter-spacing: 0.2em;
-    /* padding: 8px 0; */
   }
 
   /*==============================================================
@@ -413,7 +404,6 @@ body {
   }
 
   .footer .info {
-    /* font-weight: 400px; */
     font-size: 16px;
   }
 
@@ -471,12 +461,12 @@ body {
 @media screen and (min-width: 640px) {
   /* タブレット用レイアウト 640px以上の範囲に収めるデザインはこの中に記述 */
 
-  .sp-nav,
+  /* .sp-nav, */
   .sp-only {
     display: none;
   }
 
-  .tb-nav {
+  .container-sns {
     display: block;
   }
 
@@ -496,58 +486,75 @@ body {
   }
 
   .header .logo-box img  {
-    /* width: 80px; */
     width: 73px;
   }
 
   .header .logo-box .logo  {
     margin-top: 16px;
-    /* font-size: 23px; */
     font-size: 21px;
   }
 
-  .nav-list {
-    height: 150px;
-    /* width: 82.4%; */
-    width: 100%;
-    display: flex;
-    align-items: center;
+  .header .btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
     justify-content: center;
-    margin-right: 40px;
+    position: fixed;
+    top: 55px;
+    right: 5%;
   }
 
-  .header .list-box {
-    margin-right: 12px;
+  .header.scrolled .btn {
+    top: 25px;
+    transition: all 0.5s ease;
   }
 
-  .nav-item {
+
+  /* メニューのデザイン*/
+  .nav-item{
+    font-size: 26px;
+  }
+
+  .container-sns {
+    display: flex;
+    align-content: center;
+    margin-top: 70px;
+  }
+
+  .container-sns p {
     font-size: 14px;
-    margin: 0 10px;
+    font-weight: bold;
+    color: #fff;
+    margin-right: 12px;
+    align-items: center;
+    margin-top: 4px;
   }
 
-  .nav-item a.active{
-    padding-bottom: 7px;
-    border-bottom: solid 1px #fff;
+  .container-sns .sns img {
+    width: 22px;
+    margin-left: 14px;
   }
 
-  .trigger-header {
-    height: 1px;
-    /* background: red; */
+  .container .logo-box img  {
+    width: 84px;
+  }
+
+  .container .logo-box .logo  {
+    margin-top: 14px;
+    font-size: 24px;
+  }
+
+  .container .logo-box {
+    margin-bottom: 44px;
   }
 
 
   /* ヘッダーがスクロールされたときに追加されるクラス */
-  .header.scrolled {
-    height: 80px;
-    transition: all 0.3s ease;
-    background-color: #EDECE6;
-  }
-
   .header.scrolled .logo-box {
     width: 120px;
     height: 120px;
     transition: all 1s 0s cubic-bezier(0.23,1,0.32,1);
-    /* transition: all 0.3s ease; */
   }
 
   .header.scrolled .logo-box a  {
@@ -565,28 +572,8 @@ body {
     margin-top: 9px;
   }
 
-  .header.scrolled .nav-item a {
-    color: #333; /* スクロール後のリンク文字色 */
-  }
 
-  .header.scrolled .nav-list {
-    height: 80px; /* ナビゲーションバーの高さを少し縮める */
-    /* margin-right: 2px; */
-    padding-bottom: 8px;
-    /* justify-content: end; */
-  }
 
-  .header.scrolled .nav-item a.active{
-    border-bottom: solid 1px #333;
-  }
-
-  /* ========== TOP以外のページ（index-others）=========== */
-  .index-other .header .nav-item a {
-    color: #333; /* スクロール後のリンク文字色 */
-  }
-  .index-other .header .nav-item a.active{
-    border-bottom: solid 1px #333;
-  }
 
   /*==============================================================
     　　TB_コピー
@@ -629,18 +616,19 @@ body {
   }
 
 
-
 }
 
 
 @media screen and (min-width: 1024px) {
   /* パソコン用レイアウト 1024px以上の範囲に収めるデザインはこの中に記述 */
 
-  .pc-only {
+  .pc-only,
+  .pc-nav {
     display: block;
   }
 
-  .pc-none {
+  .pc-none,
+  .sp-nav {
     display: none;
   }
   /*==============================================================
@@ -669,17 +657,7 @@ body {
     font-size: 25px;
   }
 
-  /* .header-sns {
-    display: flex;
-    margin-left: 100px;
-    display: inline-block;
-    display: grid;
-    grid-template-columns: 1fr auto;
-  } */
-
   .header-sns {
-    /* min-width: 300px; */
-    /* display: inline-block; */
     height: 150px;
     display: flex;
     align-items: center;
@@ -712,13 +690,18 @@ body {
   }
 
   .nav-list {
+    display: flex;
     justify-content: left;
     margin: 0;
     width: auto;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
     padding-bottom: 20px;
   }
 
   .nav-item {
+    font-size: 14px;
     margin: 0 14px;
   }
 
@@ -727,12 +710,39 @@ body {
     justify-content: space-between;
     width: 100%;
     padding: 0 40px 0 25px;
-    /* margin-bottom: 20px; */
     margin-right: 0;
+  }
+
+  .nav-item a.active{
+    padding-bottom: 7px;
+    border-bottom: solid 1px #fff;
+  }
+
+  .trigger-header {
+    height: 1px;
   }
 
 
   /* ヘッダーがスクロールされたときに追加されるクラス */
+  .header.scrolled {
+    height: 80px;
+    transition: all 0.3s ease;
+    background-color: #EDECE6;
+  }
+
+  .header.scrolled .nav-item a {
+    color: #333; /* スクロール後のリンク文字色 */
+  }
+
+  .header.scrolled .nav-list {
+    height: 80px; /* ナビゲーションバーの高さを少し縮める */
+    padding-bottom: 8px;
+  }
+
+  .header.scrolled .nav-item a.active{
+    border-bottom: solid 1px #333;
+  }
+
   .header.scrolled .logo-box .logo {
     font-size: 17px;
     margin-top: 9px;
@@ -741,6 +751,7 @@ body {
 
   .header.scrolled .header-sns {
     height: 80px;
+    transition: all 0.3s ease;
     padding-bottom: 7px;
   }
 
@@ -757,6 +768,13 @@ body {
   }
 
   /* ========== TOP以外のページ（index-others）=========== */
+  .index-other .header .nav-item a {
+    color: #333; /* スクロール後のリンク文字色 */
+  }
+  .index-other .header .nav-item a.active{
+    border-bottom: solid 1px #333;
+  }
+
   .index-other .header-sns p {
     color: #333;
   }
@@ -812,12 +830,9 @@ body {
 }
 
 @media screen and (min-width: 1180px) {
-  /* タブレット横（ipad Air）用レイアウト 1400px以上の範囲に収めるデザインはこの中に記述 */
-  /*==============================================================
-    　　ヘッダー
-  ==============================================================*/
-  .header .list-box {
-    padding: 0 80px 0 55px;
+  /* タブレット横（ipad Air）用レイアウト 1180px以上の範囲に収めるデザインはこの中に記述 */
+  .pc-item {
+    display: block;
   }
 
   /*==============================================================
@@ -831,6 +846,12 @@ body {
 
 @media screen and (min-width: 1400px) {
   /* パソコン用レイアウト 1400px以上の範囲に収めるデザインはこの中に記述 */
+  /*==============================================================
+    　　ヘッダー
+  ==============================================================*/
+  .header .list-box {
+    padding: 0 80px 0 55px;
+  }
   /*==============================================================
     　　ホバーアニメーション
   ==============================================================*/

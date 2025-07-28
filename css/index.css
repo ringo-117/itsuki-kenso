@@ -209,7 +209,8 @@
 
   .sec-img {
     width: 100%;
-    height: 196px;
+    /* height: 196px; */
+    height: 100%;
     overflow: hidden;
     position: relative;
   }
@@ -280,11 +281,79 @@
   }
 
   /*==============================================================
+    　　COMMITMENT
+  ==============================================================*/
+  .sec-commitment {
+    margin-bottom: 78px;
+    margin-right: 37.5px;
+  }
+
+  .sec-commitment .sec-img {
+    overflow: hidden;
+  }
+
+  .sec-commitment .sec-img img {
+    /* transform: scale(1.2); */
+    object-position: 50% 100%;
+    /* padding-bottom: 500px; */
+  }
+
+  .sec-commitment .sec-title {
+    text-align: left;
+    letter-spacing: 0.1em;
+    margin: 30px 0 20px;
+    margin-bottom: 20px;
+  }
+
+  .sec-commitment .sec-title .title {
+    margin-bottom: 15px;
+  }
+
+  .sec-commitment .sec-title .title-jp {
+    font-family: "Noto Sans JP";
+    font-weight: 800;
+    letter-spacing: 0.2em;
+  }
+
+  .sec-commitment .text {
+    font-family: "Noto Sans JP";
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    line-height: 2em;
+    /* width: 90%; */
+    margin-bottom: 34px;
+  }
+
+  .sec-commitment .sec-content {
+    margin-left: 37.5px;
+    background-color: #EDECE6;
+    z-index: 999;
+    width: 90%;
+    margin-top: -50px;
+    margin-left: 10%;
+    padding: 40px 0px 0 7.5%;
+    border-radius: 25px 0px 0px;
+    position:relative;
+    z-index: 1;
+  }
+
+  /*==============================================================
     　　STRENGTHS
   ==============================================================*/
   .sec-strengths {
     margin-bottom: 78px;
-    margin-right: 37.5px;
+    margin-left: 37.5px;
+  }
+
+  .sec-strengths .square {
+    width: 70%;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #EDECE6;
+    border-radius: 0px 26px 0px 0px;
   }
 
   .sec-strengths .sec-title {
@@ -314,7 +383,7 @@
     margin-bottom: 34px;
   }
 
-  .sec-strengths .sec-content {
+  /* .sec-strengths .sec-content {
     margin-left: 37.5px;
     background-color: #EDECE6;
     z-index: 999;
@@ -325,7 +394,7 @@
     border-radius: 25px 0px 0px;
     position:relative;
     z-index: 1;
-  }
+  } */
 
   /*==============================================================
     　　スタッフ紹介・よくある質問
@@ -515,9 +584,9 @@
   /*==============================================================
     　　TB_ABOUT
   ==============================================================*/
-  .sec-img {
+  /* .sec-img {
     height: 450px;
-  }
+  } */
 
   .sec-about .square {
     height: 50px;
@@ -525,6 +594,19 @@
 
   .sec-about .text {
     width: auto;
+  }
+
+  /*==============================================================
+    　　TB_STRENGTHS
+  ==============================================================*/
+  .sec-strengths .square {
+    width: 50%;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #EDECE6;
+    border-radius: 0px 26px 0px 0px;
   }
 
   /*==============================================================
@@ -577,42 +659,21 @@
   /*==============================================================
     　　PC_ヒーロー
   ==============================================================*/
-  /* .sec-top .scroll {
-    right: 3%;
-    bottom: 8%;
-    width: 12%;
-    height: auto;
-  }
-
-  .sec-top .scroll .arrow {
-    margin-top: 0px;
-    margin-right: 0px;
-  } */
-
   .sec-top .scroll {
     position: absolute;
     right: 6.25%;
     bottom: 8%;
     z-index: 100;
-    width: 8.3%;
     height: auto;
     max-width: 165px;
     max-height: 165px;
-
     width: 9%;
-
   }
 
   .sec-top .scroll .arrow {
     position: absolute;
     right: 50%;
     top: 50%;
-    /* width: 15px;
-    height: 42px;
-    margin-top: -20px;
-    margin-right: -8px; */
-
-
     width: 24px;
     height: 51px;
     margin-top: -21px;
@@ -679,10 +740,11 @@
     　　PC_ABOUT
   ==============================================================*/
   .sec-about .sec-img {
-    height: 490px;
+    /* height: 490px; */
     width: 90%;
+    height: 75vh;
     position: relative;
-    margin: 0px 0px 0px 10%;
+    margin: 10px 0px 0px 10%;
   }
 
   .sec-about .square {
@@ -728,17 +790,51 @@
   }
 
   /*==============================================================
-    　　PC_STRENGTHS
+    　　PC_COMMITMENT
   ==============================================================*/
-  .sec-strengths {
+  .sec-commitment .sec-img {
+    /* height: 490px; */
+    width: 90%;
+    height: 75vh;
+    position: relative;
+    margin: 0px 10% 0px 0px;
+  }
+
+  .sec-commitment .square {
+    height: 80px;
+    /* width: 40%; */
+  }
+
+  .sec-commitment .square {
+    width: 70%;
+    height: 80px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: #EDECE6;
+    border-radius: 26px 0px 0px 0px;
+  }
+
+  .sec-content .sec-text-box .title-jp {
+    font-family: "Noto Sans JP";
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    margin-bottom: 18px;
+  }
+
+  .sec-commitment .sec-content {
+    padding: 0;
+    margin: 0;
+    margin-left: 33%;
+    width: 67%;
+  }
+
+
+  /* .sec-commitment {
     display: flex;
-  }
-
-  .sec-strengths .sec-img {
-    height: 390px;
-  }
-
-  .sec-strengths .sec-content {
+  } */
+  /* .sec-commitment .sec-content {
     width: 46.6%;
     margin-top: 120px;
     margin-left: -6.6%;
@@ -747,7 +843,64 @@
     position: relative;
     padding: 55px 0px 0px 7.1%;
     border-radius: 50px 0px 0px;
+  } */
+
+  /*==============================================================
+    　　PC_STRENGTHS
+  ==============================================================*/
+  /* .sec-strengths {
+    display: flex;
+    flex-direction:row-reverse
+  } */
+
+  /* .sec-commitment .square {
+    width: 70%;
+    height: 80px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: #EDECE6;
+    border-radius: 26px 0px 0px 0px;
+  } */
+
+  .sec-strengths .square {
+    /* display: none; */
+    height: 80px;
+    width: 40%;
   }
+
+  .sec-strengths .sec-img {
+    width: 90%;
+    height: 75vh;
+    position: relative;
+    margin: 0px 0px 0px 10%;
+  }
+
+  .sec-strengths .sec-content {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+  }
+
+  .sec-strengths .sec-content .more {
+    padding-top: 73px;
+    align-content: center;
+  }
+
+  .sec-strengths .sec-content .more a {
+    justify-content: right;
+
+  }
+
+  /* .sec-strengths .sec-content {
+    width: 46.6%;
+    margin-top: 300px;
+    margin-right: -6.6%;
+    background-color: rgb(237, 236, 230);
+    z-index: 1;
+    position: relative;
+    padding: 55px 7.1% 0px 0px;
+    border-radius: 0px 50px 0px;
+  } */
 
   /*==============================================================
     　　PC_スタッフ紹介・よくある質問
@@ -832,6 +985,17 @@
 
   .more a:hover .more-arrow img:nth-child(2) {
     opacity: 1;
+  }
+
+  /*==============================================================
+    　　PC_STRENGTHS
+  ==============================================================*/
+  /* .sec-strengths .sec-content {
+    margin-left: 10%;
+  } */
+
+  .sec-strengths .sec-content .more {
+    padding-top: 120px;
   }
 
 
