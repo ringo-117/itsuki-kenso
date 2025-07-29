@@ -927,5 +927,13 @@ body {
     padding-right: 65px;
   }
 
+  /* ==================== フッターリンク＿ホバー ================== */
+ .footer-link .foot-site-map a {
+    transition: opacity 0.3s;
+ }
+
+ .footer-link .foot-site-map a:hover {
+    opacity: 0.6;
+  }
 
 }
