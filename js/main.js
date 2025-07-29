@@ -99,55 +99,107 @@ document.addEventListener('DOMContentLoaded', () => {
 // ===================================================
 // LINE
 // ===================================================
+// const lineBox = document.getElementById('lineBox');
+// const endTarget = document.querySelector('.end-target');
+
+// let endVisible = false;
+
+// // 画面サイズごとのスクロール開始位置（px）
+// function getShowStart() {
+// 	const width = window.innerWidth;
+
+// 	// ページ内のカスタムデータ取得（なければnull）
+// 	const pageSpValue = document.body.dataset.lineboxSp;
+
+// 	if (width <= 640) {
+// 		// data-linebox-sp がある場合は使い、なければデフォルトの 20
+// 		return pageSpValue ? parseInt(pageSpValue, 10) : 20;
+// 	} else if (width <= 1024) {
+// 		return 150; // タブレット
+// 	} else {
+// 		return 300; // PC
+// 	}
+// }
+
+// function handleScroll() {
+// 	const scrollY = window.scrollY || window.pageYOffset;
+// 	const showStart = getShowStart(); // サイズに応じて取得
+
+// 	if (scrollY > showStart && !endVisible) {
+// 		lineBox.classList.add('show');
+// 	} else {
+// 		lineBox.classList.remove('show');
+// 	}
+// }
+
+// // IntersectionObserver：目印が見えたら非表示
+// const observer = new IntersectionObserver((entries) => {
+// 	entries.forEach(entry => {
+// 		endVisible = entry.isIntersecting;
+// 		handleScroll(); // 状態が変わったら再判定
+// 	});
+// });
+
+// if (endTarget) {
+// 	observer.observe(endTarget);
+// }
+
+// // スクロールで常にチェック
+// window.addEventListener('scroll', handleScroll);
+
+// // リサイズされたときにもチェック（スマホ←→PC切替対応）
+// window.addEventListener('resize', handleScroll);
+
+// // 初回実行
+// handleScroll();
+
+
+
+// ===================================================
+// LINE
+// ===================================================
+// ===================================================
+// LINE
+// ===================================================
 const lineBox = document.getElementById('lineBox');
 const endTarget = document.querySelector('.end-target');
 
-let endVisible = false;
-
-// 画面サイズごとのスクロール開始位置（px）
 function getShowStart() {
 	const width = window.innerWidth;
-
+	const pageSpValue = document.body.dataset.lineboxSp;
 	if (width <= 640) {
-		return 20; // スマホ
+		return pageSpValue ? parseInt(pageSpValue, 10) : 20;
 	} else if (width <= 1024) {
-		return 150; // タブレット
+		return 150;
 	} else {
-		return 300; // PC
+		return 300;
 	}
 }
 
 function handleScroll() {
 	const scrollY = window.scrollY || window.pageYOffset;
-	const showStart = getShowStart(); // サイズに応じて取得
+	const showStart = getShowStart();
 
-	if (scrollY > showStart && !endVisible) {
+	// endTarget の位置（ページ全体に対するtop座標）
+	const endTargetTop = endTarget
+		? endTarget.getBoundingClientRect().top + window.pageYOffset
+		: Infinity;
+
+	// lineBox を表示する条件：
+	// ・発火位置より下
+	// ・endTargetより上（＝まだ通過していない）
+	if (scrollY > showStart && scrollY + window.innerHeight < endTargetTop) {
 		lineBox.classList.add('show');
 	} else {
 		lineBox.classList.remove('show');
 	}
 }
 
-// IntersectionObserver：目印が見えたら非表示
-const observer = new IntersectionObserver((entries) => {
-	entries.forEach(entry => {
-		endVisible = entry.isIntersecting;
-		handleScroll(); // 状態が変わったら再判定
-	});
-});
-
-if (endTarget) {
-	observer.observe(endTarget);
-}
-
-// スクロールで常にチェック
 window.addEventListener('scroll', handleScroll);
-
-// リサイズされたときにもチェック（スマホ←→PC切替対応）
 window.addEventListener('resize', handleScroll);
-
-// 初回実行
 handleScroll();
+
+
 
 
 

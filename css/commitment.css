@@ -90,12 +90,23 @@ body {
     margin-bottom: 50px;
   }
 
-  /* 矢印 */
+  /* 矢印共通 */
   .swiper-button-next:after,
   .swiper-button-prev:after {
     display: none;
   }
+  /* 次のスライドがない時 */
+  .swiper-button-next,
+  .swiper-button-prev {
+    transition: opacity 0.3s ease;
+  }
+  .swiper-button-next.swiper-button-disabled,
+  .swiper-button-prev.swiper-button-disabled {
+    opacity: 0;
+    /* transition: opacity 0.3s ease; */
+  }
 
+  /* 右矢印 */
   .swiper-button-next img {
     width: 57px;
     height: 57px;
@@ -103,6 +114,7 @@ body {
     margin-bottom: 50px;
   }
 
+  /* 左矢印 */
   .swiper-button-prev img {
     width: 57px;
     height: 57px;
