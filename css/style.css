@@ -148,7 +148,8 @@ body {
     background-color: #fff;
     justify-content: center;
     position: fixed;
-    top: 20px;
+    /* top: 20px; */
+    top: 18px;
     right: 5%;
   }
 
@@ -169,7 +170,7 @@ body {
   }
 
   .btn i:nth-of-type(1){
-    top: 20px;
+    top: 22px;
   }
 
   .btn i:nth-of-type(2){
@@ -177,7 +178,7 @@ body {
   }
 
   .btn.active i:nth-of-type(1){
-    transform: translateY(4px) rotate(45deg);
+    transform: translateY(2px) rotate(45deg);
   }
 
   .btn.active i:nth-of-type(2){
@@ -218,7 +219,7 @@ body {
     overflow-y: scroll;
     pointer-events: none;
     /* padding: 115px 0 0 75px; */
-    padding: 30% 0 0 16%;
+    padding: 28% 0 0 16%;
     padding-bottom: env(safe-area-inset-bottom);
   }
 
@@ -236,8 +237,9 @@ body {
     font-family: "Noto Sans JP";
     color: #fff;
     text-align: left;
-    font-size: 24px;
-    font-weight: 700;
+    /* font-size: 24px; */
+    font-size: 22px;
+    font-weight: 500;
     font-style: normal;
     margin-bottom: 30px;
     justify-content: center;
@@ -477,6 +479,8 @@ body {
     width: 180px;
     height: 200px;
     margin-left: 2.5%;
+    transition: all 0.5s ease;
+
   }
 
   .header .logo-box a  {
@@ -501,8 +505,8 @@ body {
     background-color: #fff;
     justify-content: center;
     position: fixed;
-    top: 55px;
-    right: 5%;
+    top: 50px;
+    right: 4%;
   }
 
   .header.scrolled .btn {
@@ -510,10 +514,44 @@ body {
     transition: all 0.5s ease;
   }
 
+  .header .logo-box.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    z-index: 2;
+    filter: brightness(0.4);
+    transition: all 0.5s ease;
+  }
+
 
   /* メニューのデザイン*/
+  .container {
+    width: 50%;
+    left: 50%;
+    padding: 26% 0 0 10%;
+  }
+
+  .cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 10; /* containerのz-indexより小さくする */
+    /* display: none; */
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+
+  .cover.active {
+    /* display: block; */
+    opacity: 1;
+  }
+
   .nav-item{
-    font-size: 26px;
+    font-size: 24px;
+    margin-bottom: 32px;
   }
 
   .container-sns {
@@ -541,13 +579,14 @@ body {
   } */
 
   .container .logo-box img  {
-    width: 88px;
+    width: 75px;
   }
 
   .container .logo-box .logo  {
     margin-top: 15px;
-    font-size: 25px;
-    margin-bottom:  90px;
+    font-size: 21px;
+    /* margin-bottom: 90px; */
+    /* margin-bottom: 60px; */
   }
 
   .container .logo-box {

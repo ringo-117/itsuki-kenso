@@ -10,12 +10,14 @@
   if (btn) {
     const container = document.querySelector('.container');
     const header   = document.querySelector('.header');
+    const cover   = document.querySelector('.cover');
     const logo     = document.querySelector('.header .logo-box'); // ← 明示
 
     btn.addEventListener('click', () => {
       btn.classList.toggle('active');
       container?.classList.toggle('active');
       header?.classList.toggle('active');
+      cover?.classList.toggle('active');
       logo?.classList.toggle('active'); // ← これで透明にできる
 
       // ボディのスクロール制御
@@ -27,6 +29,11 @@
         bodyStyle.overflow = 'hidden';
         bodyStyle.height   = '100%';
       }
+    });
+
+    // coverをクリックしたらメニューを閉じる
+    cover?.addEventListener('click', () => {
+      btn.click();
     });
 
     // メニューリンクをクリックしたらメニューを閉じる（修正済み）
