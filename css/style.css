@@ -365,8 +365,8 @@ body {
     left: 50%;
     right: 0;
     transform: translate(-50%, 100%);
-    width: 235px;
-    height: 40px;
+    width: 295px;
+    height: 51px;
     font-weight: bold;
     z-index: 16;
     opacity: 0;
@@ -382,9 +382,11 @@ body {
   }
 
   .tel-box a {
-    width: 235px;
+    /* width: 235px; */
+    width: 295px;
     /* max-width: 40px; */
-    height: 40px;
+    /* height: 40px; */
+    height: 51px;
     /* justify-items: center; */
     /* white-space: nowrap; */
     /* display: inline-block; */
@@ -395,12 +397,21 @@ body {
     margin: auto;
     align-items: center;
     gap: 10px;
+
+
+    gap: 22px;
+
   }
 
   .tel-box img {
-    width: 15px;
-    height: 15px;
+    /* width: 15px; */
+    /* height: 15px; */
     /* margin-right: 20px; */
+
+
+    width: 23px;
+    /* height: 25px; */
+    margin-top: 1px;
   }
 
   .tel-box p {
@@ -414,6 +425,12 @@ body {
     font-weight: 600;
     letter-spacing: 0.1em;
     margin-right: 5px;
+
+
+    font-size: 18.5px;
+    margin-right: 10px;
+
+
 
   }
 
