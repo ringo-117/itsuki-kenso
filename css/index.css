@@ -723,7 +723,7 @@
     　　PC_PICKUP
   ==============================================================*/
   .sec {
-    margin-top: 140px;
+    margin-top: 135px;
   }
 
   .sec-pickup .sec-title {
@@ -759,14 +759,14 @@
   }
 
   .swiper-slide img {
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 2.9 / 2;
   }
 
   /*==============================================================
     　　PC_SERVICE
   ==============================================================*/
   .sec-service .sec-title {
-    margin-bottom: 55px;
+    margin-bottom: 60px;
   }
 
   .service-box {
@@ -809,7 +809,7 @@
   .sec-about {
     width: 83.3%;
     margin: 0 auto;
-    padding: 140px 0 20px;
+    padding: 150px 0 20px;
     display: flex;
     justify-content: space-between;
   }
