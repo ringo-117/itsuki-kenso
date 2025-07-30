@@ -236,10 +236,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // ===================================================
 // LINE
 // ===================================================
-// ===================================================
-// LINE
-// ===================================================
 const lineBox = document.getElementById('lineBox');
+// const telBox = document.getElementById('telBox');
 const endTarget = document.querySelector('.end-target');
 
 function getShowStart() {
@@ -268,8 +266,10 @@ function handleScroll() {
 	// ・endTargetより上（＝まだ通過していない）
 	if (scrollY > showStart && scrollY + window.innerHeight < endTargetTop) {
 		lineBox.classList.add('show');
+    // telBox.classList.add('show');
 	} else {
 		lineBox.classList.remove('show');
+    // telBox.classList.remove('show');
 	}
 }
 
