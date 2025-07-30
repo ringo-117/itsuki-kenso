@@ -321,6 +321,7 @@ body {
     z-index: 16;
     opacity: 0;
     background-color: #D0C4A2;
+    transition: padding-right 0.8s ease, all 0.8s ease;
   }
 
   .line-box.show {
@@ -363,7 +364,6 @@ body {
     position: fixed;
     bottom: 0;
     left: 50%;
-    right: 0;
     transform: translate(-50%, 100%);
     width: 295px;
     height: 51px;
@@ -371,9 +371,8 @@ body {
     z-index: 16;
     opacity: 0;
     background-color: #289A49;
-    /* border-radius: 8px 8px 0 0; */
     border-radius: 13px 13px 0 0;
-
+    transition: padding-bottom 0.8s ease, all 0.8s ease;
   }
 
   .tel-box.show {
@@ -382,10 +381,8 @@ body {
   }
 
   .tel-box a {
-    /* width: 235px; */
     width: 295px;
     /* max-width: 40px; */
-    /* height: 40px; */
     height: 51px;
     /* justify-items: center; */
     /* white-space: nowrap; */
@@ -396,21 +393,11 @@ body {
     display: flex;
     margin: auto;
     align-items: center;
-    gap: 10px;
-
-
     gap: 22px;
-
   }
 
   .tel-box img {
-    /* width: 15px; */
-    /* height: 15px; */
-    /* margin-right: 20px; */
-
-
     width: 23px;
-    /* height: 25px; */
     margin-top: 1px;
   }
 
@@ -419,19 +406,18 @@ body {
     /* transform: rotate(90deg); */
     /* margin: 0 auto; */
     font-size: 16px;
-    /* letter-spacing: 0.2em; */
     color: #fff;
-    /* margin-right: 12px; */
     font-weight: 600;
     letter-spacing: 0.1em;
-    margin-right: 5px;
-
-
     font-size: 18.5px;
     margin-right: 10px;
+  }
 
 
-
+  .tel-box.hide {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
   }
 
   /*==============================================================
@@ -543,7 +529,8 @@ body {
   /* タブレット用レイアウト 640px以上の範囲に収めるデザインはこの中に記述 */
 
   /* .sp-nav, */
-  .sp-only {
+  .sp-only,
+  .tel-box {
     display: none;
   }
 
@@ -698,7 +685,34 @@ body {
     margin-top: 9px;
   }
 
+  /*==============================================================
+    　　TB_電話番号
+  ==============================================================*/
+  .tel-box {
+    position: fixed;
+    top: 30%;
+    left: auto;
+    right: 0;
+    transform: translate(100%, -50%);
+    width: 51px;
+    height: 295px;
+    border-radius: 0;
+    transition: padding-bottom 0.8s ease, all 0.8s ease;
+  }
 
+  .tel-box.show {
+    transform: translate(0, -50%);
+  }
+
+  .tel-box a {
+    width: 51px;
+    height: 295px;
+    display: inline-block;
+  }
+
+  .tel-box p {
+    transform: rotate(90deg);
+  }
 
 
   /*==============================================================
@@ -978,6 +992,10 @@ body {
   .header .list-box {
     padding: 0 80px 0 55px;
   }
+
+  .header.scrolled .nav-list {
+    padding-top: 13px;
+  }
   /*==============================================================
     　　ホバーアニメーション
   ==============================================================*/
@@ -1045,9 +1063,6 @@ body {
   }
 
   /* ==================== LINEタグ ================== */
-  .line-box {
-    transition: padding-right 0.8s ease, all 0.8s ease;
-  }
 
   .line-box:hover {
     padding-right: 65px;

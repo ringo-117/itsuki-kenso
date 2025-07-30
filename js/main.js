@@ -53,6 +53,7 @@
     const header    = document.querySelector('.header');
     const cover     = document.querySelector('.cover');
     const logo      = document.querySelector('.header .logo-box');
+    const telBox = document.getElementById('telBox');
 
     function toggleMenu(forceClose = false) {
       const isOpen = btn.classList.contains('active');
@@ -69,6 +70,8 @@
         document.body.style.overflow = '';
         document.body.style.height = '';
 
+        telBox?.classList.remove('hide');
+
         // アニメーション後に cover を display: none に
         if (cover) {
           setTimeout(() => {
@@ -84,6 +87,8 @@
         container?.classList.add('active');
         header?.classList.add('active');
         logo?.classList.add('active');
+
+        telBox?.classList.add('hide');
 
         // 表示してからふわっと出す
         if (cover) {
