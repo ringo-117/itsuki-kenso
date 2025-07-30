@@ -723,11 +723,12 @@
     　　PC_PICKUP
   ==============================================================*/
   .sec {
-    margin-top: 135px;
+    margin-top: 140px;
   }
 
   .sec-pickup .sec-title {
-    margin-bottom: 55px;
+    /* margin-bottom: 55px; */
+    margin-bottom: 70px;
   }
 
 
@@ -752,6 +753,15 @@
     padding: 0;
   }
 
+  .swiper-slide {
+    /* margin-top: 56px; */
+    height: auto;
+  }
+
+  .swiper-slide img {
+    aspect-ratio: 3 / 2;
+  }
+
   /*==============================================================
     　　PC_SERVICE
   ==============================================================*/
@@ -763,17 +773,34 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     row-gap: 0;
     margin: 0 auto;
-    max-width: 1000px;
+    /* max-width: 1000px; */
+    column-gap: 3%;
   }
 
   .service-img {
-    width: 130px;
-    height: 130px;
+    /* width: 130px; */
+    /* height: 130px; */
+
+    width: 100%;
+    height: auto;
+    margin: 0;
+    aspect-ratio: 1 / 1;
   }
 
   .service-item p {
     font-size: 20px;
     margin-top: 20px;
+
+    /* font-size: 22px; */
+    /* margin-top: 24px; */
+  }
+
+
+  .service-item.item-01 p {
+    margin-right: 3px;
+  }
+  .service-item.item-06 p {
+    margin-left: 3px;
   }
 
   /*==============================================================
@@ -782,7 +809,7 @@
   .sec-about {
     width: 83.3%;
     margin: 0 auto;
-    padding: 125px 0;
+    padding: 140px 0 20px;
     display: flex;
     justify-content: space-between;
   }
@@ -1063,6 +1090,26 @@
 
   .more a:hover .more-arrow img:nth-child(2) {
     opacity: 1;
+  }
+
+  /*==============================================================
+    　　PC_SERVICE
+  ==============================================================*/
+  .service-img {
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  .service-item p {
+    font-size: 21px;
+    margin-top: 24px;
+  }
+
+  .service-item.item-01 p {
+    margin-right: 5px;
+  }
+  .service-item.item-06 p {
+    margin-left: 5px;
   }
 
   /*==============================================================
