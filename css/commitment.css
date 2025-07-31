@@ -206,11 +206,9 @@ body {
 
 @media screen and (min-width: 640px) {
   /* タブレット用レイアウト 640px以上の範囲に収めるデザインはこの中に記述 */
+
   /*==============================================================
   　　TB_安さへのこだわり
-  ==============================================================*/
-  /*==============================================================
-  　　PC_安さへのこだわり
   ==============================================================*/
   .commitment .main-img img {
     display: none;
@@ -227,35 +225,114 @@ body {
     /* background-size: 90%; */
     background-position: 50% 100%;
   }
-  /*==============================================================
-  　　TB_準備中画面
-  ==============================================================*/
-  .main-bg {
-    height: 90vh;
-  }
-  .coming-soon-box {
+
+  /* .text-box.text-item {
     width: 74.97%;
-    padding: 80px 24px 80px;
-    margin-top: 16px;
-    font-weight: 600;
+    margin: 80px 0 0 16.66%;
+    padding-bottom: 150px;
+  } */
+
+  .main-top .text-box.text-item {
+    width: 74.97%;
+    margin: 85px 0 0 16.66%;
   }
 
-  .icon-clock {
-    width: 85px;
-    height: 85px;
-    margin-bottom: 28px;
+  .point-img {
+    width: 74.97%;
+    margin: 85px 0 0 16.66%;
   }
 
-  .coming-soon-box h1 {
-    font-size: 22px;
-    margin-bottom: 24px;
-    letter-spacing: 0.18em;
+  .text-box.box-01 {
+    margin-bottom: 85px;
   }
 
-  .coming-soon-box p {
-    font-size: 14px;
+  .text-box .title {
+    font-size: 28px;
+    width: auto;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .text-box .text {
+    font-size: 16px;
+    line-height: 2;
+  }
+
+  .main-top .text-box p {
+    width: 95%;
+  }
+
+  /* スライダー（下）スタイル */
+  .slider-box-02 {
+    margin-top: 85px;
+    margin-bottom: 30px;
+  }
+
+  .slider-box-02 .text-box,
+  .slider-box-02 .slide-03 .text-box {
+    height: 230px;
+    padding: 54px 50px 6px 50px;
+  }
+  .slider-box-02 .text-box figcaption {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+  .slider-box-02 .text-box blockquote {
+    font-size: 18px;
     line-height: 1.8;
   }
+
+  .slider-box-02 .swiper-button-next img,
+  .slider-box-02 .swiper-button-prev img {
+    margin-bottom: 60px;
+  }
+
+  /* アイコン */
+  .slider-box-02 .icon {
+    bottom: 200px;
+    left: 45px;
+  }
+  .slider-box-02 .icon img {
+    width: 95px;
+    height: 95px;
+  }
+
+
+  /*==============================================================
+  　　TB_スライダー
+  ==============================================================*/
+
+  .swiper .swiper-slide {
+    width: 10vw;
+    height: auto;
+    aspect-ratio: 3 / 4.5;
+  }
+
+  /* 右矢印 */
+  .swiper-button-next img {
+    width: 65px;
+    height: 65px;
+    margin-right: 200px;
+    margin-bottom: 100px;
+  }
+
+  /* 左矢印 */
+  .swiper-button-prev img {
+    width: 65px;
+    height: 65px;
+    transform: scale(-1, 1);
+    margin-left: 200px;
+    margin-bottom: 100px;
+  }
+
+  .swiper .swiper-slide {
+    margin-bottom: 100px;
+  }
+
+  .main-top .text-box.text-item.box-02 {
+    margin-top: 0;
+  }
+
 
 }
 
@@ -288,13 +365,87 @@ body {
     /* background-size: 90%; */
     background-position: 50% 100%;
   }
-  
+
+  .main-top .text-box p {
+    width: 100%;
+  }
+
+  /* スライダー（下）スタイル */
+  .slider-box-02 .text-box,
+  .slider-box-02 .slide-03 .text-box {
+    height: 200px;
+  }
+  .slider-box-02 .text-box figcaption {
+    font-size: 25px;
+    margin-bottom: 8px;
+  }
+  .slider-box-02 .text-box blockquote {
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  /* アイコン */
+  .slider-box-02 .icon {
+    bottom: 170px;
+    left: 50px;
+  }
+
+  /*==============================================================
+  　　PC_スライダー
+  ==============================================================*/
+  .swiper {
+    margin: 40px 0 0 16.66%;
+    width: 74.97%;
+    /* position: relative; */
+  }
+
+  .swiper .swiper-slide {
+    width: 10vw;
+    height: auto;
+    aspect-ratio: 3 / 2.2;
+  }
+
+  /* 右矢印 */
+  .swiper-button-next img {
+    /* position: absolute;
+    right: 100%; */
+    margin-right: 170px;
+  }
+
+  /* 左矢印 */
+  .swiper-button-prev img {
+    margin-left: 170px;
+  }
+  .slider-box-02 {
+    margin-top: 95px;
+    margin-bottom: 30px;
+  }
 }
 
 @media screen and (min-width: 1400px) {
   /* パソコン用レイアウト 1400px以上の範囲に収めるデザインはこの中に記述 */
   /*==============================================================
-    　　main-top（index-other.css）
+    　　PC_スライダー
   ==============================================================*/
+  /* スライダー（下）スタイル */
+  .slider-box-02 .text-box,
+  .slider-box-02 .slide-03 .text-box {
+    padding-left: 70px;
+  }
+
+  /* アイコン */
+  .slider-box-02 .icon {
+    left: 65px;
+  }
+
+  /* 右矢印 */
+  .swiper-button-next img {
+    margin-right: 320px;
+  }
+
+  /* 左矢印 */
+  .swiper-button-prev img {
+    margin-left: 320px;
+  }
 
 }

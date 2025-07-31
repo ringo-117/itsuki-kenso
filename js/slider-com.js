@@ -26,21 +26,18 @@ const swiper = new Swiper(".swiper", {
     },
     // 640px以上（タブレットなど）
     640: {
-      slidesPerView: 2,
-      spaceBetween: 32,
-      centeredSlides: false // ← 見切れをなくす
+      slidesPerView: 1.5,
+      spaceBetween: 30,
     },
     // 1024px以上（PC）
     1024: {
-      slidesPerView: 2,
+      slidesPerView: 1.4,
       spaceBetween: 30,
-      centeredSlides: false // ← 見切れをなくす
     },
     // 1450px以上（PC）
-    1400: {
-      slidesPerView: 2,
-      spaceBetween: 30,
-      centeredSlides: false // ← 見切れをなくす
-    }
+    // 1400: {
+    //   slidesPerView: 1.5,
+    //   spaceBetween: 30,
+    // }
   }
 });
