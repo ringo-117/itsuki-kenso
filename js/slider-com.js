@@ -5,7 +5,6 @@ const swiper = new Swiper(".swiper", {
   centeredSlides: true,
   spaceBetween: 10,
   grabCursor: true,
-  // loop: true,
   effect: 'slide',
   speed: 800,
 
@@ -33,6 +32,8 @@ const swiper = new Swiper(".swiper", {
     1024: {
       slidesPerView: 1.4,
       spaceBetween: 30,
+      loop: true,
+
     },
     // 1450px以上（PC）
     // 1400: {
