@@ -178,6 +178,10 @@ body {
     font-weight: 500;
   }
 
+  .slider-box-02 .slide-01 .text-box {
+    padding: 25px 0 6px 14px;
+  }
+
   .slider-box-02 .slide-03 .text-box {
     padding: 25px 2px 8px 12px;
   }
@@ -269,6 +273,7 @@ body {
   }
 
   .slider-box-02 .text-box,
+  .slider-box-02 .slide-01 .text-box,
   .slider-box-02 .slide-03 .text-box {
     height: 230px;
     padding: 54px 50px 6px 50px;
@@ -372,6 +377,7 @@ body {
 
   /* スライダー（下）スタイル */
   .slider-box-02 .text-box,
+  .slider-box-02 .slide-01 .text-box,
   .slider-box-02 .slide-03 .text-box {
     height: 200px;
   }
@@ -429,6 +435,7 @@ body {
   ==============================================================*/
   /* スライダー（下）スタイル */
   .slider-box-02 .text-box,
+  .slider-box-02 .slide-01 .text-box,
   .slider-box-02 .slide-03 .text-box {
     padding-left: 70px;
   }
