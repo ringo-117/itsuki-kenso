@@ -189,6 +189,30 @@
     background-color: #fff;
     border-radius: 50%;
     margin: 0 auto;
+    position: relative;
+    align-content: center;
+  }
+
+  .service-img img {
+    width: 60%;
+    height: 60%;
+    object-fit: cover;
+    margin: auto;
+  }
+
+  .item-02 .service-img img {
+    width: 54%;
+    height: 54%;
+  }
+  .item-03 .service-img img {
+    width: 65%;
+    height: 65%;
+  }
+  .item-06 .service-img img {
+    width: 65%;
+    height: 65%;
+    margin-top: -5px;
+    margin-right: -2px;
   }
 
   .service-item p {
@@ -796,9 +820,9 @@
   }
 
 
-  .service-item.item-01 p {
+  /* .service-item.item-01 p {
     margin-right: 3px;
-  }
+  } */
   .service-item.item-06 p {
     margin-left: 3px;
   }
@@ -1117,9 +1141,9 @@
     margin-top: 24px;
   }
 
-  .service-item.item-01 p {
+  /* .service-item.item-01 p {
     margin-right: 5px;
-  }
+  } */
   .service-item.item-06 p {
     margin-left: 5px;
   }
