@@ -201,8 +201,9 @@
   }
 
   .item-02 .service-img img {
-    width: 54%;
-    height: 54%;
+    width: 58%;
+    height: 58%;
+    margin-right: -1.5px;
   }
   .item-03 .service-img img {
     width: 65%;
