@@ -1,16 +1,5 @@
 @charset "UTF-8";
 /* CSS Document */
-
-
-/* body {
-  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", HelveticaNeue, YuGothic, "Yu Gothic Medium", "Yu Gothic", Verdana, Meiryo, sans-serif;
-  font-feature-settings: 'palt' 1;
-  letter-spacing: 0.05em;
-  color: #333333;
-  background-color: #ffffff;
-} */
-
-/* ここからCSSを追加していく */
 /* index.css */
 
 @media screen and (min-width: 320px) {
@@ -65,6 +54,10 @@
   .sec-top .info-box span {
     font-weight: 500;
   }
+  .sec-top .info-box span.tel {
+    border-bottom: solid 1px #fff;
+    padding-bottom: 1px;
+  }
 
   .sec-top .scroll {
     position: absolute;
@@ -74,8 +67,6 @@
     height: auto;
     max-width: 160px;
     max-height: 160px;
-
-
     width: 22%;
   }
 
@@ -83,17 +74,10 @@
     position: absolute;
     right: 50%;
     top: 50%;
-    /* width: 15px;
-    height: 42px;
-    margin-top: -20px;
-    margin-right: -8px; */
-
     width: 24px;
     height: 51px;
     margin-top: -20px;
     margin-right: -13px;
-
-
   }
 
   .sec-top .scroll .arrow img {
@@ -141,21 +125,16 @@
   .swiper {
     width: 100%;
     height: auto;
-  }
-
-  /* .swiper-wrapper {
-    display: flex;
+    padding: 0 0 90px;
+    position: relative;
   }
 
   .swiper-slide {
-    flex-shrink: 0;
-    width: 100%;
-  } */
-
-  .swiper-slide {
-    /* margin-top: 56px; */
     height: 195px;
     width: 296px;
+
+    /* position: relative;
+    aspect-ratio: 3 / 2; */
   }
 
   .swiper-slide img {
@@ -163,6 +142,48 @@
     height: 100%;
     object-fit: cover;
     border-radius: 20px;
+  }
+
+  /* 矢印共通 */
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    display: none;
+  }
+  /* 次のスライドがない時 */
+  .swiper-button-next,
+  .swiper-button-prev {
+    transition: opacity 0.3s ease;
+  }
+  .swiper-button-next.swiper-button-disabled,
+  .swiper-button-prev.swiper-button-disabled {
+    opacity: 0.4;
+  }
+
+
+  /* 矢印スタイル共通 */
+  .swiper-arrows .swiper-button-next img,
+  .swiper-arrows .swiper-button-prev img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+
+  /* 左矢印 */
+  .swiper-arrows .swiper-button-prev img {
+    transform: scale(-1, 1);
+    margin-left: -230px;
+  }
+
+  .swiper-wrapper {
+    position: relative;
+  }
+
+  .swiper-arrows {
+    position: absolute;
+    right: 20px;   /* 右からの余白 */
+    bottom: 30px;  /* 下からの余白 */
+    display: flex;
+    z-index: 10;   /* テキストや画像の上に来るように */
   }
 
   /*==============================================================
@@ -174,7 +195,11 @@
 
   .service-box {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "service-01 service-01 service-02 service-02 service-03 service-03"
+      ". service-04 service-04 service-05 service-05 .";
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     row-gap: 34px;
     margin: 0 6px;
   }
@@ -182,6 +207,26 @@
   .service-item {
     text-align: center;
   }
+
+  /* サービス並び順 */
+  .service-item.item-01 {
+    grid-area: service-01;
+  }
+  .service-item.item-02 {
+    grid-area: service-02;
+  }
+  .service-item.item-03 {
+    grid-area: service-03;
+  }
+  .service-item.item-04 {
+    grid-area: service-04;
+    margin-left: -6px;
+  }
+  .service-item.item-05{
+    grid-area: service-05;
+    margin-right: -6px;
+  }
+
 
   .service-img {
     width: 114px;
@@ -200,20 +245,21 @@
     margin: auto;
   }
 
-  .item-02 .service-img img {
+  .item-01 .service-img img {
+    width: 65%;
+    height: 65%;
+  }
+  .item-03 .service-img img {
     width: 58%;
     height: 58%;
     margin-right: -1.5px;
   }
-  .item-03 .service-img img {
-    width: 65%;
-    height: 65%;
-  }
-  .item-06 .service-img img {
+  .item-04 .service-img img {
     width: 65%;
     height: 65%;
     margin-top: -5px;
-    margin-right: -2px;
+    /* margin-right: -2px; */
+    margin-right: 0;
   }
 
   .service-item p {
@@ -234,7 +280,6 @@
 
   .sec-img {
     width: 100%;
-    /* height: 196px; */
     height: 100%;
     overflow: hidden;
     position: relative;
@@ -245,16 +290,6 @@
     height: 100%;
     object-fit: cover;
   }
-
-  /* .sec-about .square {
-    width: 80%;
-    height: 40px;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    background-color: #EDECE6;
-    border-radius: 26px 0px 0px 0px;
-  } */
 
   .sec-about .sec-title {
     text-align: left;
@@ -281,7 +316,6 @@
   }
 
   .more a {
-    /* display: inline-block; */
     display: flex;
     align-items: center;
   }
@@ -292,7 +326,6 @@
 
   .more .more-arrow img{
     width: 48px;
-    /* margin-left: 16px; */
   }
 
   .sec-about .text {
@@ -301,7 +334,7 @@
     font-weight: 500;
     letter-spacing: 0.15em;
     line-height: 2em;
-    width: 90%;
+    width: 95%;
     margin-bottom: 34px;
   }
 
@@ -340,9 +373,7 @@
   }
 
   .sec-commitment .sec-img img {
-    /* transform: scale(1.2); */
     object-position: 50% 100%;
-    /* padding-bottom: 500px; */
   }
 
   .sec-commitment .sec-title {
@@ -368,21 +399,9 @@
     font-weight: 500;
     letter-spacing: 0.15em;
     line-height: 2em;
-    /* width: 90%; */
     margin-bottom: 34px;
+    margin-right: 50px;
   }
-
-  /* .sec-commitment .sec-content {
-    margin-left: 37.5px;
-    background-color: #EDECE6;
-    width: 90%;
-    margin-top: -50px;
-    margin-left: 10%;
-    padding: 40px 0px 0 7.5%;
-    border-radius: 25px 0px 0px;
-    position:relative;
-    z-index: 1;
-  } */
 
   /*==============================================================
     　　STRENGTHS
@@ -391,16 +410,6 @@
     margin-bottom: 78px;
     margin-right: 37.5px;
   }
-
-  /* .sec-strengths .square {
-    width: 70%;
-    height: 40px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background-color: #EDECE6;
-    border-radius: 0px 26px 0px 0px;
-  } */
 
   .sec-strengths .sec-title {
     text-align: left;
@@ -425,7 +434,6 @@
     font-weight: 500;
     letter-spacing: 0.15em;
     line-height: 2em;
-    /* width: 90%; */
     margin-bottom: 34px;
   }
 
@@ -483,11 +491,16 @@
     border-radius: 32px;
     width: 100%;
     height: 207px;
-    /* aspect-ratio: 3 / 2; */
   }
 
   .sec-link .sec-img img {
     filter: brightness(60%);
+  }
+
+  .sec-link.faq .sec-img img {
+    object-position: 50% 100%;
+    transform: scale(1.5);
+    margin-top: -50px;
   }
 
   /*==============================================================
@@ -530,36 +543,15 @@
     font-weight: 500;
   }
 
-  /* .sec-top .scroll {
-    right: 6.25%;
-    bottom: 8%;
-    width: 12%;
-    height: auto;
+  .sec-top .info-box span.tel {
+    padding-bottom: 2px;
   }
-
-  .sec-top .scroll .arrow {
-    margin-top: 0px;
-    margin-right: -15px;
-  }
-
-  .sec-top .scroll .arrow img {
-    width: 15px;
-  }
-
-  .sec-top .scroll .circle img {
-    width: 105px;
-    animation: rotate-circle 20s linear infinite;
-    display: inline-block;
-  } */
 
   .sec-top .scroll {
     right: 6.25%;
     bottom: 8%;
-    /* width: 12%; */
-    height: auto;
-
     width: 13%;
-
+    height: auto;
   }
 
   .sec-top .scroll .arrow img {
@@ -586,41 +578,61 @@
     font-size: 15px;
   }
 
+  .sec-pickup {
+    width: 100%;
+  }
+
   /* ==================== スライダー ================== */
+  .swiper {
+    padding: 0 68px 120px;
+    margin-top: 52px;
+  }
+
   .swiper-slide {
-    height: 255px;
     width: 340px;
-    /* width: 325px; */
+    height: 255px;
   }
 
   .swiper-slide img {
     border-radius: 30px;
   }
 
+  /* 矢印スタイル共通 */
+  /* .swiper-arrows .swiper-button-next img,
+  .swiper-arrows .swiper-button-prev img {
+    width: 72px;
+    height: 72px;
+  } */
+
+  /* 左矢印 */
+  .swiper-arrows .swiper-button-prev img {
+    margin-left: -240px;
+  }
+
+  .swiper-arrows {
+    bottom: 40px;
+    margin-right: 40px;
+  }
+
+
   /*==============================================================
     　　TB_SERVICE
   ==============================================================*/
+  .service-item.item-04 {
+    margin-left: 0;
+  }
+  .service-item.item-05{
+    margin-right: 0;
+  }
+
   .service-img {
     width: 140px;
     height: 140px;
   }
 
-  /* .service-item {
-    position: relative;
+  .item-04 .service-img img {
+    margin-right: -2px;
   }
-
-  .service-item-bg {
-    position: absolute;
-    z-index: -1;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    height: 65%;
-    border-radius: 50%;
-    transition: .5s;
-    background-color: #289A49;
-  } */
 
   .service-item p {
     font-size: 17px;
@@ -630,24 +642,6 @@
   /*==============================================================
     　　TB_ABOUT
   ==============================================================*/
-  /* .sec-img {
-    height: 450px;
-  } */
-
-  /* .sec-about .square {
-    height: 50px;
-  } */
-
-  /* .sec-about .square {
-    width: 50%;
-    height: 40px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background-color: #EDECE6;
-    border-radius: 0px 26px 0px 0px;
-  } */
-
   .sec-about .text {
     width: auto;
   }
@@ -660,24 +654,18 @@
     height: 50px;
   }
 
+  .sec-commitment .text {
+    margin-right: 0px;
+  }
+
   /*==============================================================
     　　TB_STRENGTHS
   ==============================================================*/
-  /* .sec-strengths .square {
-    width: 50%;
-    height: 40px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background-color: #EDECE6;
-    border-radius: 0px 26px 0px 0px;
-  } */
 
   /*==============================================================
     　　TB_スタッフ紹介・よくある質問
   ==============================================================*/
   .sec-link-box {
-    /* display: flex; */
     margin-bottom: 80px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -690,7 +678,6 @@
 
   .sec-link.staff {
     margin-bottom: 0;
-    /* margin-right: 30px; */
   }
 
   .sec-link.faq {
@@ -704,7 +691,13 @@
   .sec-link .sec-img {
     width: 100%;
     height: 200px;
-    /* aspect-ratio: 3 / 1.7; */
+  }
+
+  .sec-link.faq .sec-img img {
+    object-position: 0% 100%;
+    transform: scale(1.5);
+    margin-top: -40px;
+    margin-left: 10px;
   }
 
   /*==============================================================
@@ -752,7 +745,6 @@
   }
 
   .sec-pickup .sec-title {
-    /* margin-bottom: 55px; */
     margin-bottom: 70px;
   }
 
@@ -762,29 +754,36 @@
     margin-top: 0;
   }
 
-  /* .sec-title .title-jp {
-    font-size: px;
-    margin-top: 0;
-  } */
-
-
   .more {
     font-size: 15px;
   }
 
   .sec.sec-pickup {
-    /* max-width: 950px; */
-    /* padding: 0 145px; */
     padding: 0;
   }
 
+  /* ==================== スライダー ================== */
+  .swiper {
+    padding: 0 98px 130px;
+    margin-top: 0;
+  }
+
   .swiper-slide {
-    /* margin-top: 56px; */
     height: auto;
   }
 
   .swiper-slide img {
     aspect-ratio: 2.9 / 2;
+  }
+
+  /* 左矢印 */
+  .swiper-arrows .swiper-button-prev img {
+    margin-left: -245px;
+  }
+
+  .swiper-arrows {
+    bottom: 40px;
+    margin-right: 60px;
   }
 
   /*==============================================================
@@ -795,17 +794,16 @@
   }
 
   .service-box {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "service-01 service-02 service-03 service-04 service-05";
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
     row-gap: 0;
     margin: 0 auto;
-    /* max-width: 1000px; */
     column-gap: 3%;
   }
 
   .service-img {
-    /* width: 130px; */
-    /* height: 130px; */
-
     width: 100%;
     height: auto;
     margin: 0;
@@ -815,17 +813,6 @@
   .service-item p {
     font-size: 20px;
     margin-top: 20px;
-
-    /* font-size: 22px; */
-    /* margin-top: 24px; */
-  }
-
-
-  /* .service-item.item-01 p {
-    margin-right: 3px;
-  } */
-  .service-item.item-06 p {
-    margin-left: 3px;
   }
 
   /*==============================================================
@@ -838,7 +825,6 @@
     display: flex;
     justify-content: space-between;
   }
-
 
   .sec-about .sec-img {
     height: 490px;
@@ -853,30 +839,7 @@
     margin-top: 11px;
   }
 
-  /* .sec-about .sec-img img {
-    aspect-ratio: 3 / 2;
-  } */
-
-  /* .sec-about .square {
-    height: 80px;
-    width: 40%;
-  } */
-
-  /* .sec-about .sec-title {
-    margin: 0;
-  }
-
-  .sec-about .sec-title .title {
-    margin: 0;
-    margin-right: 25px;
-  } */
-
   .sec-about .about-info {
-    /* display: grid;
-    grid-template-columns: 1fr auto 200px;
-    align-items: center;
-    margin-top: 20px; */
-
     width: 46.6%;
     margin-top: 120px;
     margin-left: -6.6%;
@@ -887,15 +850,6 @@
     position: relative;
   }
 
-  /* .sec-about .text {
-    margin: 0;
-  } */
-
-  /* .about-info .more {
-    justify-content: end;
-    margin-top: 5px;
-  } */
-
   .sec-about .sec-text-box .title-jp {
     font-family: "Noto Sans JP";
     font-size: 16px;
@@ -904,15 +858,10 @@
     margin-bottom: 18px;
   }
 
-  /* .sec-about .more a {
-    justify-content: end;
-  } */
-
   /*==============================================================
     　　PC_COMMITMENT
   ==============================================================*/
   .sec-commitment .sec-img {
-    /* height: 490px; */
     width: 90%;
     height: 100%;
     position: relative;
@@ -939,9 +888,6 @@
     margin-bottom: 18px;
   }
 
-  
-
-
   .sec-commitment .sec-content {
     display: grid;
     grid-template-columns: 1fr 200px;
@@ -956,44 +902,9 @@
     justify-content: right;
   }
 
-
-  /* .sec-commitment {
-    display: flex;
-  } */
-  /* .sec-commitment .sec-content {
-    width: 46.6%;
-    margin-top: 120px;
-    margin-left: -6.6%;
-    background-color: rgb(237, 236, 230);
-    z-index: 1;
-    position: relative;
-    padding: 55px 0px 0px 7.1%;
-    border-radius: 50px 0px 0px;
-  } */
-
   /*==============================================================
     　　PC_STRENGTHS
   ==============================================================*/
-  /* .sec-strengths {
-    display: flex;
-    flex-direction:row-reverse
-  } */
-
-  /* .sec-strengths .square {
-    width: 70%;
-    height: 80px;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    background-color: #EDECE6;
-    border-radius: 26px 0px 0px 0px;
-  } */
-
-  /* .sec-strengths .square {
-    height: 80px;
-    width: 40%;
-  } */
-
   .sec-strengths .square {
     width: 70%;
     height: 85px;
@@ -1019,19 +930,6 @@
     width: 67%;
   }
 
-  
-
-  /* .sec-strengths .sec-content {
-    width: 46.6%;
-    margin-top: 300px;
-    margin-right: -6.6%;
-    background-color: rgb(237, 236, 230);
-    z-index: 1;
-    position: relative;
-    padding: 55px 7.1% 0px 0px;
-    border-radius: 0px 50px 0px;
-  } */
-
   /*==============================================================
     　　PC_スタッフ紹介・よくある質問
   ==============================================================*/
@@ -1050,31 +948,20 @@
     letter-spacing: 0.25em;
   }
 
-
   .bottom-bg {
     width: 100%;
     height: 44vw;
     background: url(../img/bottom-bg.webp) center center / cover no-repeat fixed;
   }
 
+  .sec-link.faq .sec-img img {
+    margin-top: -60px;
+  }
+
 }
 
 @media screen and (min-width: 1400px) {
   /* パソコン用レイアウト 1400px以上の範囲に収めるデザインはこの中に記述 */
-  /* ==================== ヒーロー ================== */
-  /* .sec-top .scroll .arrow {
-    margin-right: 40px;
-  } */
-
-  /* ==================== ABOUT ================== */
-  /* .about-info {
-    grid-template-columns: 300px 1fr 200px;
-  }
-
-  .sec-about .text {
-    max-width: 730px;
-  } */
-
   /* ========== 詳しく見るアイコン=========== */
   .hover-img {
     display: block;
@@ -1118,19 +1005,33 @@
   }
 
   /*==============================================================
-    　　PC_PICKUP
+    　　PC-big_PICKUP
   ==============================================================*/
 
   .sec-pickup .sec-title {
     margin-bottom: 80px;
   }
 
-  .swiper-slide img {
+  /* ==================== スライダー ================== */
+  /* .swiper-slide img {
     aspect-ratio: 3.05 / 2;
+  } */
+
+  .swiper {
+    padding: 0 8.35% 140px;
+  }
+
+  /* 左矢印 */
+  .swiper-arrows .swiper-button-prev img {
+    margin-left: -250px;
+  }
+
+  .swiper-arrows {
+    margin-right: 245px;
   }
 
   /*==============================================================
-    　　PC_SERVICE
+    　　PC-big_SERVICE
   ==============================================================*/
   .service-img {
     width: 85%;
@@ -1142,30 +1043,35 @@
     margin-top: 24px;
   }
 
-  /* .service-item.item-01 p {
-    margin-right: 5px;
-  } */
-  .service-item.item-06 p {
+  .service-item.item-04 p {
     margin-left: 5px;
   }
 
   /*==============================================================
-    　　PC_COMMITMENT
+    　　PC-big_COMMITMENT
   ==============================================================*/
-  /* .sec-strengths .sec-content {
-    margin-left: 10%;
-  } */
-
   .sec-commitment .sec-content .more {
     padding-top: 100px;
   }
 
-
   /*==============================================================
-    　　フッター上
+    　　PC-big_フッター上
   ==============================================================*/
   .bottom-bg img {
     display: none;
+  }
+
+  /*==============================================================
+    　　PC-big_スタッフ紹介・よくある質問
+  ==============================================================*/
+  .sec-link.faq .sec-img img {
+    object-position: 0% 90%;
+    margin-top: 0px;
+  }
+
+  .sec-link .title {
+    width: 93.5%;
+    height: 87%;
   }
 
 }

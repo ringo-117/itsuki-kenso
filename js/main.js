@@ -5,47 +5,6 @@
 // ===================================================
 // ヘッダー（ハンバーガー）
 // ===================================================
-// {
-//   const btn = document.querySelector('.btn');
-//   if (btn) {
-//     const container = document.querySelector('.container');
-//     const header   = document.querySelector('.header');
-//     const cover   = document.querySelector('.cover');
-//     const logo     = document.querySelector('.header .logo-box'); // ← 明示
-
-//     btn.addEventListener('click', () => {
-//       btn.classList.toggle('active');
-//       container?.classList.toggle('active');
-//       header?.classList.toggle('active');
-//       cover?.classList.toggle('active');
-//       logo?.classList.toggle('active'); // ← これで透明にできる
-
-//       // ボディのスクロール制御
-//       const bodyStyle = document.body.style;
-//       if (bodyStyle.overflow === 'hidden') {
-//         bodyStyle.overflow = '';
-//         bodyStyle.height   = '';
-//       } else {
-//         bodyStyle.overflow = 'hidden';
-//         bodyStyle.height   = '100%';
-//       }
-//     });
-
-//     // coverをクリックしたらメニューを閉じる
-//     cover?.addEventListener('click', () => {
-//       btn.click();
-//     });
-
-//     // メニューリンクをクリックしたらメニューを閉じる（修正済み）
-//     document.querySelectorAll('#nav-list a[href]').forEach(link => {
-//       link.addEventListener('click', () => {
-//         btn.click();
-//       });
-//     });
-//   }
-// }
-
-
 {
   const btn = document.querySelector('.btn');
   if (btn) {
@@ -183,105 +142,45 @@ document.addEventListener('DOMContentLoaded', () => {
 // LINE
 // ===================================================
 // const lineBox = document.getElementById('lineBox');
+// const telBox = document.getElementById('telBox');
 // const endTarget = document.querySelector('.end-target');
 
-// let endVisible = false;
-
-// // 画面サイズごとのスクロール開始位置（px）
 // function getShowStart() {
 // 	const width = window.innerWidth;
-
-// 	// ページ内のカスタムデータ取得（なければnull）
 // 	const pageSpValue = document.body.dataset.lineboxSp;
-
 // 	if (width <= 640) {
-// 		// data-linebox-sp がある場合は使い、なければデフォルトの 20
 // 		return pageSpValue ? parseInt(pageSpValue, 10) : 20;
 // 	} else if (width <= 1024) {
-// 		return 150; // タブレット
+// 		return 150;
 // 	} else {
-// 		return 300; // PC
+// 		return 300;
 // 	}
 // }
 
 // function handleScroll() {
 // 	const scrollY = window.scrollY || window.pageYOffset;
-// 	const showStart = getShowStart(); // サイズに応じて取得
+// 	const showStart = getShowStart();
 
-// 	if (scrollY > showStart && !endVisible) {
+// 	// endTarget の位置（ページ全体に対するtop座標）
+// 	const endTargetTop = endTarget
+// 		? endTarget.getBoundingClientRect().top + window.pageYOffset
+// 		: Infinity;
+
+// 	// lineBox を表示する条件：
+// 	// ・発火位置より下
+// 	// ・endTargetより上（＝まだ通過していない）
+// 	if (scrollY > showStart && scrollY + window.innerHeight < endTargetTop) {
 // 		lineBox.classList.add('show');
+//     telBox.classList.add('show');
 // 	} else {
 // 		lineBox.classList.remove('show');
+//     telBox.classList.remove('show');
 // 	}
 // }
 
-// // IntersectionObserver：目印が見えたら非表示
-// const observer = new IntersectionObserver((entries) => {
-// 	entries.forEach(entry => {
-// 		endVisible = entry.isIntersecting;
-// 		handleScroll(); // 状態が変わったら再判定
-// 	});
-// });
-
-// if (endTarget) {
-// 	observer.observe(endTarget);
-// }
-
-// // スクロールで常にチェック
 // window.addEventListener('scroll', handleScroll);
-
-// // リサイズされたときにもチェック（スマホ←→PC切替対応）
 // window.addEventListener('resize', handleScroll);
-
-// // 初回実行
 // handleScroll();
-
-
-
-// ===================================================
-// LINE
-// ===================================================
-const lineBox = document.getElementById('lineBox');
-const telBox = document.getElementById('telBox');
-const endTarget = document.querySelector('.end-target');
-
-function getShowStart() {
-	const width = window.innerWidth;
-	const pageSpValue = document.body.dataset.lineboxSp;
-	if (width <= 640) {
-		return pageSpValue ? parseInt(pageSpValue, 10) : 20;
-	} else if (width <= 1024) {
-		return 150;
-	} else {
-		return 300;
-	}
-}
-
-function handleScroll() {
-	const scrollY = window.scrollY || window.pageYOffset;
-	const showStart = getShowStart();
-
-	// endTarget の位置（ページ全体に対するtop座標）
-	const endTargetTop = endTarget
-		? endTarget.getBoundingClientRect().top + window.pageYOffset
-		: Infinity;
-
-	// lineBox を表示する条件：
-	// ・発火位置より下
-	// ・endTargetより上（＝まだ通過していない）
-	if (scrollY > showStart && scrollY + window.innerHeight < endTargetTop) {
-		lineBox.classList.add('show');
-    telBox.classList.add('show');
-	} else {
-		lineBox.classList.remove('show');
-    telBox.classList.remove('show');
-	}
-}
-
-window.addEventListener('scroll', handleScroll);
-window.addEventListener('resize', handleScroll);
-handleScroll();
-
 
 
 

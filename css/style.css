@@ -2,12 +2,9 @@
 /* CSS Document */
 
 body {
-  /* font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", HelveticaNeue, YuGothic, "Yu Gothic Medium", "Yu Gothic", Verdana, Meiryo, sans-serif; */
   font-family: "Josefin Sans", sans-serif;
   font-optical-sizing: auto;
-  /* font-weight: weight; */
   font-style: normal;
-
   font-feature-settings: 'palt' 1;
   letter-spacing: 0.05em;
   color: #333;
@@ -17,12 +14,15 @@ body {
 @media screen and (min-width: 320px) {
   /* スマホ用レイアウト 320px以上の範囲に収めるデザインはこの中に記述 */
 
+  .sp-none,
   .pc-nav,
   .pc-item,
+  .pc-big-only,
   .container-sns {
     display: none;
   }
 
+  .tb-only,
   .pc-only {
     display: none;
   }
@@ -148,7 +148,6 @@ body {
     background-color: #fff;
     justify-content: center;
     position: fixed;
-    /* top: 20px; */
     top: 18px;
     right: 5%;
   }
@@ -218,7 +217,6 @@ body {
     overflow: hidden;
     overflow-y: scroll;
     pointer-events: none;
-    /* padding: 115px 0 0 75px; */
     padding: 28% 0 0 16%;
     padding-bottom: env(safe-area-inset-bottom);
   }
@@ -237,7 +235,6 @@ body {
     font-family: "Noto Sans JP";
     color: #fff;
     text-align: left;
-    /* font-size: 24px; */
     font-size: 22px;
     font-weight: 500;
     font-style: normal;
@@ -267,6 +264,32 @@ body {
     font-size: 16px;
     margin-left: 3px;
     text-align: left;
+  }
+
+  .sp-nav .sns {
+    display: flex;
+    font-size: 14px;
+    justify-content: left;
+    padding-top: 20px;
+    align-items: center;
+    font-weight: 700;
+  }
+
+  .sp-nav .sns .sns-icon {
+    margin-left: 24px;
+  }
+
+  .sp-nav .sns img {
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+  }
+
+  .sp-nav .sns img.tiktok {
+    width: 21px;
+    height: 21px;
+    margin-bottom: 0.8px;
+    margin-left: -0.5px;
   }
 
 
@@ -304,6 +327,7 @@ body {
   .index-other .header.scrolled .btn.active i {
     left: 14.3px;
   }
+
 
   /*==============================================================
     　　LINE
@@ -382,12 +406,7 @@ body {
 
   .tel-box a {
     width: 295px;
-    /* max-width: 40px; */
     height: 51px;
-    /* justify-items: center; */
-    /* white-space: nowrap; */
-    /* display: inline-block; */
-    /* padding-bottom: 40px; */
     display: grid;
     place-content: center;
     display: flex;
@@ -403,8 +422,6 @@ body {
 
   .tel-box p {
     font-family: "Noto Sans JP";
-    /* transform: rotate(90deg); */
-    /* margin: 0 auto; */
     font-size: 16px;
     color: #fff;
     font-weight: 600;
@@ -476,14 +493,23 @@ body {
 
   .footer .info .info-item {
     display: grid;
-    grid-template-columns: 85px 1fr;
+    /* grid-template-columns: 85px 1fr; */
+    grid-template-columns: 102px 1fr;
     margin-bottom: 10px;
     font-weight: 400;
     line-height: 1.5;
   }
 
+  .footer .info .info-item.box_01 span {
+    white-space: nowrap;
+  }
+
   .footer .info .info-item dt {
     font-weight: 400;
+  }
+
+  .footer .info .info-item.box_04 a {
+    border-bottom: solid 1px #333;
   }
 
   .footer .text {
@@ -514,12 +540,15 @@ body {
     margin-bottom: -6px;
   }
 
-  .footer-link .sns img {
+  .footer-link .sns img.line,
+  .footer-link .sns img.instagram {
     width: 18px;
+    margin-right: 9px;
   }
 
-  .footer-link .sns img.line {
-    margin-right: 9px;
+  .footer-link .sns img.tiktok {
+    width: 17px;
+    margin-bottom: 0.8px;
   }
 
 }
@@ -530,10 +559,13 @@ body {
 
   /* .sp-nav, */
   .sp-only,
+  .tb-none,
   .tel-box {
     display: none;
   }
 
+  .tb-only,
+  .sp-none,
   .container-sns {
     display: block;
   }
@@ -605,7 +637,6 @@ body {
     height: 100vh;
     background: rgba(0, 0, 0, 0.6);
     z-index: 10; /* containerのz-indexより小さくする */
-    /* display: none; */
     opacity: 0;
     transition: all 0.5s ease;
     pointer-events: none;
@@ -643,10 +674,6 @@ body {
     margin-left: 14px;
   }
 
-  /* .container .logo-box  {
-    width: 84px;
-  } */
-
   .container .logo-box img  {
     width: 75px;
   }
@@ -654,8 +681,6 @@ body {
   .container .logo-box .logo  {
     margin-top: 15px;
     font-size: 21px;
-    /* margin-bottom: 90px; */
-    /* margin-bottom: 60px; */
   }
 
   .container .logo-box {
@@ -683,6 +708,25 @@ body {
   .header.scrolled .logo-box .logo {
     font-size: 17px; /* 文字サイズも小さく */
     margin-top: 9px;
+  }
+
+  .sp-nav .sns {
+    font-size: 17px;
+    padding-top: 44px;
+    font-weight: 700;
+  }
+
+  .sp-nav .sns img {
+    width: 24.5px;
+    height: 24.5px;
+    margin-right: 10px;
+  }
+
+  .sp-nav .sns img.tiktok {
+    width: 23.5px;
+    height: 23.5px;
+    margin-bottom: 1px;
+    margin-left: -1px;
   }
 
   /*==============================================================
@@ -738,10 +782,14 @@ body {
 
   .footer .info .info-item {
     display: grid;
-    grid-template-columns: 85px 1fr;
+    /* grid-template-columns: 85px 1fr; */
     margin-bottom: 10px;
     font-weight: 400;
     line-height: 1.2;
+  }
+
+  .footer .info .info-item.box_04 a {
+    padding-bottom: 1px;
   }
 
   .footer .text {
@@ -762,11 +810,13 @@ body {
 @media screen and (min-width: 1024px) {
   /* パソコン用レイアウト 1024px以上の範囲に収めるデザインはこの中に記述 */
 
+  .tb-none,
   .pc-only,
   .pc-nav {
     display: block;
   }
 
+  .tb-only,
   .pc-none,
   .sp-nav {
     display: none;
@@ -816,13 +866,14 @@ body {
     margin-left: 16px;
   }
 
-  .header-sns .sns img {
+  .header-sns .sns img.line,
+  .header-sns .sns img.instagram {
+    margin-right: 14px;
     width: 21px;
   }
 
-  .header-sns .sns img.line {
-    margin-right: 16px;
-    width: 21px;
+  .header-sns .sns img.tiktok {
+    width: 20px;
   }
 
   .header .header-sns .icon-white {
@@ -942,13 +993,18 @@ body {
 
   .footer .info .info-item {
     font-size: 14.5px;
+    grid-template-columns: 100px 1fr;
+  }
+
+  .footer .info .info-item.box_04 a {
+    padding-bottom: 2px;
   }
 
   .footer .info-box .text {
     margin: 0;
     margin-top: -10px;
     font-size: 13px;
-    max-width: 582px;
+    max-width: 580px;
   }
 
   .footer-link .foot-site-map {
@@ -979,13 +1035,17 @@ body {
     　　フッター
   ==============================================================*/
   .footer .info-box {
-    grid-template-columns: 380px auto;
+    /* grid-template-columns: 380px auto; */
+    grid-template-columns: 390px auto;
   }
 
 }
 
 @media screen and (min-width: 1400px) {
   /* パソコン用レイアウト 1400px以上の範囲に収めるデザインはこの中に記述 */
+  .pc-big-only {
+    display: block;
+  }
   /*==============================================================
     　　ヘッダー
   ==============================================================*/

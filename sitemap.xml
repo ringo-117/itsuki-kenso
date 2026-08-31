@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- ホーム -->
+  <url>
+    <loc>https://itsuki-kenso.com/</loc>
+    <lastmod>2025-04-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- 私たちについて　ABOUT -->
+  <url>
+    <loc>https://itsuki-kenso.com/about.html</loc>
+    <lastmod>2025-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 安さへのこだわり　commitment -->
+  <url>
+    <loc>https://itsuki-kenso.com/commitment.html</loc>
+    <lastmod>2025-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 選ばれる理由 strengths -->
+  <url>
+    <loc>https://itsuki-kenso.com/strengths.html</loc>
+    <lastmod>2025-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- スタッフ紹介　staff  -->
+  <url>
+    <loc>https://itsuki-kenso.com/staff.html</loc>
+    <lastmod>2025-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- よくある質問　faq -->
+  <url>
+    <loc>https://itsuki-kenso.com/faq.html</loc>
+    <lastmod>2025-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>

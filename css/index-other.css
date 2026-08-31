@@ -3,9 +3,7 @@
 body {
   font-family: "Josefin Sans", sans-serif;
   font-optical-sizing: auto;
-  /* font-weight: weight; */
   font-style: normal;
-
   font-feature-settings: 'palt' 1;
   letter-spacing: 0.05em;
   color: #333;
@@ -14,6 +12,60 @@ body {
 
 @media screen and (min-width: 320px) {
   /* スマホ用レイアウト 320px以上の範囲に収めるデザインはこの中に記述 */
+
+  /*==============================================================
+    　　パンくずリスト
+  ==============================================================*/
+  /* パンくず全体 */
+  .breadcrumbs {
+    font-size: 16px;
+    margin: 10px 0 20px;
+    padding: 0;
+    position: absolute;
+    top: 14px;
+    left: 0;
+    font-weight: 550;
+  }
+
+  /* リストのベース */
+  .breadcrumbs ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* スマホで折り返し */
+    /* gap: 3px; */
+    padding: 0;
+    margin: 0;
+  }
+
+  /* 各要素 */
+  .breadcrumbs li {
+    display: flex;
+    align-items: center;
+  }
+
+  /* 区切り（>）を疑似要素で挿入 */
+  .breadcrumbs li + li::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border: 0;
+    border-top: solid 1.5px #333333;
+    border-right: solid 1.5px #333333;
+    transform: rotate(45deg);
+    margin: 0 14px 0 10px;
+    color: #999;
+    font-size: 20px;
+    margin-bottom: 4px;
+  }
+
+  /* リンク */
+  .breadcrumbs a {
+    text-decoration: none;
+    color: #289A49;
+    transition: color 0.2s;
+  }
+
+
   /*==============================================================
     　　main-top
   ==============================================================*/
@@ -28,8 +80,6 @@ body {
     letter-spacing: 0.1em;
     padding-top: 25%;
     color: #289A49;
-
-    /* font-size: 48px; */
     z-index: 1;
     line-height: 1;
     position: absolute;
@@ -52,7 +102,8 @@ body {
   .main-top .text-box {
     width: 80%;
     margin: -40px 0 0 10%;
-    padding-top: 40px;
+    /* padding-top: 40px; */
+    padding-top: 85px;
     line-height: 1.8;
     background-color: #edece6;
     border-radius: 0 25px 0 0;
@@ -67,6 +118,16 @@ body {
 
 @media screen and (min-width: 640px) {
   /* タブレット用レイアウト 640px以上の範囲に収めるデザインはこの中に記述 */
+
+  /*==============================================================
+    　　TB_パンくずリスト
+  ==============================================================*/
+  /* パンくず全体 */
+  .breadcrumbs {
+    font-size: 15px;
+    top: 18px;
+  }
+
   /*==============================================================
     　　TB_main-top
   ==============================================================*/
@@ -92,7 +153,7 @@ body {
   .main-top .text-box {
     width: 74.97%;
     margin: -50px 0 0 16.66%;
-    padding-top: 75px;
+    padding-top: 90px;
     border-radius: 0 25px 0 0;
   }
 
@@ -106,6 +167,22 @@ body {
 
 @media screen and (min-width: 1024px) {
   /* パソコン用レイアウト 1024px以上の範囲に収めるデザインはこの中に記述 */
+
+  /*==============================================================
+    　　PC_パンくずリスト
+  ==============================================================*/
+  /* パンくず全体 */
+  .breadcrumbs {
+    font-size: 16px;
+    top: 30px;
+  }
+
+  /* 区切り（>）を疑似要素で挿入 */
+  .breadcrumbs li + li::before {
+    margin: 0 18px 0 14px;
+    margin-bottom: 4px;
+  }
+
   /*==============================================================
     　　PC_main-top
   ==============================================================*/
@@ -124,7 +201,7 @@ body {
   .main-top .text-box {
     width: 49.98%;
     margin: -75px 0 0 16.66%;
-    padding-top: 100px;
+    padding-top: 120px;
     background-color: #edece6;
     border-radius: 0 50px 0 0;
     position: relative;
@@ -138,6 +215,17 @@ body {
   }
 
 
+}
 
+@media screen and (min-width: 1400px) {
+  /* パソコン用レイアウト 1400px以上の範囲に収めるデザインはこの中に記述 */
+  /* ==================== パンくずリスト ================== */
+  /* リンク */
+  .breadcrumbs a {
+    transition: opacity 0.3s;
+  }
 
+  .breadcrumbs a:hover {
+    opacity: 0.6;
+  }
 }

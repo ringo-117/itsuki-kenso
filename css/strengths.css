@@ -2,12 +2,9 @@
 /* CSS Document */
 
 body {
-  /* font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", HelveticaNeue, YuGothic, "Yu Gothic Medium", "Yu Gothic", Verdana, Meiryo, sans-serif; */
   font-family: "Josefin Sans", sans-serif;
   font-optical-sizing: auto;
-  /* font-weight: weight; */
   font-style: normal;
-
   font-feature-settings: 'palt' 1;
   letter-spacing: 0.05em;
   color: #333;
@@ -108,7 +105,6 @@ body {
   .reason-item .text {
     font-size: 16px;
     width: 100%;
-    /* line-height: 2; */
     margin-top: 16px;
   }
 
@@ -129,9 +125,7 @@ body {
     display: grid;
     grid-template-columns: 44.4% 50.4%;
     column-gap: 5.5%;
-
     align-items: center;
-    /* justify-content: space-between; */
     margin-top: 60px;
   }
 

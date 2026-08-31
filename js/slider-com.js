@@ -1,16 +1,13 @@
 const slideCount = document.querySelectorAll('.swiper-slide').length;
-// const enableLoop = slideCount > 5;
 const swiper = new Swiper(".swiper", {
   slidesPerView: 1.2,
-  centeredSlides: true,
   spaceBetween: 10,
   grabCursor: true,
   effect: 'slide',
   speed: 800,
+  loop: false,
 
-  // pagination: {
-  //   el: ".swiper-pagination",
-  // },
+
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -20,25 +17,30 @@ const swiper = new Swiper(".swiper", {
   breakpoints: {
     // 0px以上（スマホなど）
     0: {
+      centeredSlides: true,
       slidesPerView: 1.3,
       spaceBetween: 20,
     },
     // 640px以上（タブレットなど）
     640: {
+      centeredSlides: false,
+      // slidesPerView: 1.5,
       slidesPerView: 1.5,
       spaceBetween: 30,
     },
     // 1024px以上（PC）
     1024: {
-      slidesPerView: 1.4,
+      // slidesPerView: 1.4,
+      slidesPerView: 2.1,
       spaceBetween: 30,
-      loop: true,
-
+      // loop: true,
     },
-    // 1450px以上（PC）
-    // 1400: {
-    //   slidesPerView: 1.5,
-    //   spaceBetween: 30,
-    // }
+    // 1400px以上（PC）
+    1400: {
+      // slidesPerView: 1.4,
+      slidesPerView: 2.01,
+      spaceBetween: 30,
+      // loop: true,
+    }
   }
 });
